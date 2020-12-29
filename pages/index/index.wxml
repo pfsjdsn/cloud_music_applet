@@ -1,0 +1,33 @@
+<div class="index_container">
+  <!-- 轮播图 -->
+  <swiper  class="banners" indicator-dots indicator-color="ivory" indicator-active-color="#d43c33" 
+  interval="2000">
+    <swiper-item>
+      <image src="../../static/images/nvsheng.jpg"></image>
+    </swiper-item>
+  </swiper>
+  <!-- 5个图标导航区域 -->
+  <view class="nav_container">
+    <view class="nav_item" wx:for="{{navigationList}}" wx:key="index">
+      <text class="iconfont {{item.iconName}}"></text>
+      <text>{{item.title}}</text>
+    </view>
+  </view>
+  <!-- 推荐歌曲区域 -->
+  <view class="recommend_container">
+    <view class="header">
+      <text class="title">推荐歌曲</text>
+      <view>
+        <text>为你精心推荐</text>
+        <text class="more">查看更多</text>
+      </view>
+    </view>
+  </view>
+  <!-- 内容区 -->
+  <scroll-view class="recommend_scroll" enable-flex scroll-x>
+    <view class="sroll_item" wx:for="{{5}}">
+      <image src="/static/images/nvsheng.jpg"></image>
+      <text>内容区内容区内容区内容区</text>
+    </view>
+  </scroll-view>
+</div>

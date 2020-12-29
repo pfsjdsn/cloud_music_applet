@@ -1,0 +1,79 @@
+.index_container {
+  .banners {
+    width: 100%;
+    height: 300rpx;
+    image {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .nav_container {
+    display: flex;
+    .nav_item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 20%;
+      text {
+        font-size: 26rpx;
+      }
+      .iconfont {
+        width: 100rpx;
+        height: 100rpx;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 100rpx;
+        background: rgb(240, 19, 19);
+        font-size: 50rpx;
+        color: #fff;
+        margin: 20rpx 0;
+      }
+    }
+  }
+  .recommend_container {
+    padding: 20rpx;
+    .header {
+      margin: 0 0 20rpx 0;
+      .title {
+        font-size: 32rpx;
+        line-height: 80rpx;
+        color: #666;
+      }
+      >view {
+        .more {
+          float: right;
+          border: 1rpx solid #333;
+          padding: 10rpx 20rpx;
+          font-size: 24rpx;
+          border-radius: 30rpx;
+        }
+      }
+    }
+  }
+  .recommend_scroll {
+    display: flex;
+    .sroll_item {
+      width: 200rpx;
+      margin: 0 20rpx 0 0;
+      image {
+        width: 200rpx;
+        height: 200rpx;
+        border-radius: 10rpx;
+      }
+      text {
+        font-size: 26rpx;
+      // 单行文本溢出, 省略号代替
+        // display: block;
+        // white-space: nowrap;
+        // overflow: hidden; // 作用于块元素
+        // text-overflow: ellipsis;
+      // 多行文本溢出, 省略号代替
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical; // 设置模式：纵向队形
+      -webkit-line-clamp: 2; // 多行的行数
+      }
+    }
+  }
+}
