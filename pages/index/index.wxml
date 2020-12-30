@@ -1,9 +1,9 @@
 <div class="index_container">
   <!-- 轮播图 -->
-  <swiper  class="banners" indicator-dots indicator-color="ivory" indicator-active-color="#d43c33" 
-  interval="2000">
-    <swiper-item>
-      <image src="../../static/images/nvsheng.jpg"></image>
+  <swiper wx:if="{{1 == 0}}" class="banners" indicator-dots indicator-color="ivory" indicator-active-color="#d43c33"
+    interval="2000">
+    <swiper-item wx:for="{{banners}}" wx:key="index">
+      <image src="{{item.pic}}"></image>
     </swiper-item>
   </swiper>
   <!-- 5个图标导航区域 -->
@@ -14,20 +14,33 @@
     </view>
   </view>
   <!-- 推荐歌曲区域 -->
-  <view class="recommend_container">
-    <view class="header">
-      <text class="title">推荐歌曲</text>
-      <view>
-        <text>为你精心推荐</text>
-        <text class="more">查看更多</text>
+  <view class="recommend_container" wx:if="{{1 == 0}}">
+    <!-- 头部 -->
+    <NavHeader title="推荐歌曲" nav="为你精心推荐"></NavHeader>
+    <!-- 内容区 -->
+    <scroll-view class="recommend_scroll" enable-flex scroll-x>
+      <view class="sroll_item" wx:for="{{recommendList}}" wx:key="id">
+        <image src="{{item.picUrl}}"></image>
+        <text>{{item.name}}</text>
       </view>
-    </view>
+    </scroll-view>
   </view>
-  <!-- 内容区 -->
-  <scroll-view class="recommend_scroll" enable-flex scroll-x>
-    <view class="sroll_item" wx:for="{{5}}">
-      <image src="/static/images/nvsheng.jpg"></image>
-      <text>内容区内容区内容区内容区</text>
-    </view>
-  </scroll-view>
+  <!-- 排行榜区域 -->
+  <view class="top_list">
+    <!-- 头部 -->
+    <NavHeader title="排行榜" nav="热歌风向标"></NavHeader>
+    <!-- 内容 -->
+    <swiper class="top_list_swiper">
+      <swiper-item>
+        <view class="swiper_item">
+          <view class="title">云音乐热歌榜</view>
+          <view class="music_item"  wx:for="{{3}}">
+            <image src="../../static/images/nvsheng.jpg"></image>
+            <text class="count">1</text>
+            <text class="nusic_name">aaa</text>
+          </view>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
 </div>
