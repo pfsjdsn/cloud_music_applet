@@ -27,6 +27,7 @@ Page({
     ],
     banners: [], // 轮播图数据
     recommendList: [], //推荐歌单
+    topList: [], //排行榜数据
 
   },
 
@@ -41,5 +42,17 @@ Page({
     // 获取推荐歌单数据
     let res = await request('/personalized', {limit: 10})
     this.setData({recommendList: res.result})
+
+    // 获取排行榜数据
+    let idx = 0
+    let {topList} = this.data
+    // 取5份
+    while (idx < 5) {
+      let res = await request('/top/list', {idx: idx++})
+      // 取前3条
+      let topListItem = {name: res.playlist.name, tracks: res.playlist.tracks.slice(0, 3)}
+      topList.push(topListItem)
+      this.setData({topList})
+    }
   }
 })

@@ -56,25 +56,37 @@
 .index_container .top_list {
   padding: 20rpx;
 }
-.index_container .top_list .swiper_item .title {
+.index_container .top_list .top_list_swiper {
+  height: 400rpx;
+}
+.index_container .top_list .top_list_swiper .swiper_item {
+  width: 96%;
+  background-color: #fbfbfb;
+}
+.index_container .top_list .top_list_swiper .swiper_item .title {
   font-size: 30rpx;
   line-height: 80rpx;
 }
-.index_container .top_list .swiper_item .music_item {
+.index_container .top_list .top_list_swiper .swiper_item .music_item {
   display: flex;
   margin: 0 0 20rpx 0;
 }
-.index_container .top_list .swiper_item .music_item image {
+.index_container .top_list .top_list_swiper .swiper_item .music_item image {
   width: 100rpx;
   height: 100rpx;
+  border-radius: 6rpx;
 }
-.index_container .top_list .swiper_item .music_item .count {
+.index_container .top_list .top_list_swiper .swiper_item .music_item .count {
   width: 100rpx;
   height: 100rpx;
   text-align: center;
   line-height: 100rpx;
 }
-.index_container .top_list .swiper_item .music_item .nusic_name {
+.index_container .top_list .top_list_swiper .swiper_item .music_item .nusic_name {
   height: 100rpx;
   line-height: 100rpx;
+  max-width: 400rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

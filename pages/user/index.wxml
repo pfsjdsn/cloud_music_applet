@@ -1,0 +1,62 @@
+<view class="user_container">
+  <view class="user_section">
+    <image src="../../static/images/personal/bgImg2.jpg"></image>
+    <view class="user_info_box">
+      <!-- 头像 -->
+      <view class="portrait_box">
+        <image class="portrait" src="../../static/images/nvsheng.jpg"></image>
+      </view>
+      <!-- 信息 -->
+      <view class="info_box">
+        <text class="username">demo</text>
+      </view>
+    </view>
+    <!-- vip -->
+    <view class="vip_card_box">
+      <image class="card_bg" src="../../static/images/nvsheng.jpg"></image>
+      <view>立即开通</view>
+      <!--  -->
+      <view class="tit">
+      <!-- 会员图标 -->
+        <text class="iconfont">会员</text>
+      </view>
+      <text class="e-m">Union</text>
+      <text class="e-b">开通会员听歌, 撸代码</text>
+    </view>
+  </view>
+  <view class="cover_container">
+    <image class="arc" src="../../static/images/nvsheng.jpg"></image>
+
+    <!-- 个人中心导航 -->
+    <view class="nav_section">
+      <view class="nav_section">
+        <view class="nav_item" wx:for="{{4}}">
+          <text class="iconfont"></text>
+          <text>demo</text>
+        </view>
+      </view>
+    </view>
+    <!-- 个人中心列表 -->
+    <view class="personl_content">
+      <!-- 最近播放 -->
+      <view class="recent_play_container">
+        <text class="title">最近播放</text>
+        <!-- 最近播放记录 -->
+        <scroll-view>
+          <view class="recent_item">
+            <image src=""></image>
+          </view>
+        </scroll-view>
+        <view>暂无播放记录</view>
+      </view>
+
+      <!-- 模块列表 -->
+      <view class="card_list">
+        <view class="card_item" wx:for="{{3}}">
+          <text class="title">我的音乐</text>
+          <text class="more">></text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

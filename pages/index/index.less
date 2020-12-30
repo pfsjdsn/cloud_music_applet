@@ -62,27 +62,37 @@
   }
   .top_list {
     padding: 20rpx;
-    .swiper_item {
-      .title {
-        font-size: 30rpx;
-        line-height: 80rpx;
-      }
-      .music_item {
-        display: flex;
-        margin: 0 0 20rpx 0;
-        image {
-          width: 100rpx;
-          height: 100rpx;
+    .top_list_swiper {
+      height: 400rpx;
+      .swiper_item {
+        width: 96%;
+        background-color: #fbfbfb;
+        .title {
+          font-size: 30rpx;
+          line-height: 80rpx;
         }
-        .count {
-          width: 100rpx;
-          height: 100rpx;
-          text-align: center;
-          line-height: 100rpx;
-        }
-        .nusic_name {
-          height: 100rpx;
-          line-height: 100rpx;
+        .music_item {
+          display: flex;
+          margin: 0 0 20rpx 0;
+          image {
+            width: 100rpx;
+            height: 100rpx;
+            border-radius: 6rpx;
+          }
+          .count {
+            width: 100rpx;
+            height: 100rpx;
+            text-align: center;
+            line-height: 100rpx;
+          }
+          .nusic_name {
+            height: 100rpx;
+            line-height: 100rpx;
+            max-width: 400rpx;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
         }
       }
     }
