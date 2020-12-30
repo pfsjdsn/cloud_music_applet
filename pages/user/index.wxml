@@ -1,10 +1,10 @@
 <view class="user_container">
   <view class="user_section">
-    <image src="../../static/images/personal/bgImg2.jpg"></image>
+    <image src=""></image>
     <view class="user_info_box">
       <!-- 头像 -->
       <view class="portrait_box">
-        <image class="portrait" src="../../static/images/nvsheng.jpg"></image>
+        <image class="portrait" src=""></image>
       </view>
       <!-- 信息 -->
       <view class="info_box">
@@ -13,7 +13,7 @@
     </view>
     <!-- vip -->
     <view class="vip_card_box">
-      <image class="card_bg" src="../../static/images/nvsheng.jpg"></image>
+      <image class="card_bg" src=""></image>
       <view>立即开通</view>
       <!--  -->
       <view class="tit">
@@ -24,8 +24,12 @@
       <text class="e-b">开通会员听歌, 撸代码</text>
     </view>
   </view>
-  <view class="cover_container">
-    <image class="arc" src="../../static/images/nvsheng.jpg"></image>
+  <!-- 手指滑动的操作 -->
+  <view class="cover_container" 
+  bindtouchstart="handleTouchStart"
+  bindtouchmove="handleTouchMove"
+  bindtouchend="bindtouchEnd" style="border: 1rpx solid red;">
+    <image class="arc" src=""></image>
 
     <!-- 个人中心导航 -->
     <view class="nav_section">
