@@ -2,18 +2,20 @@
   "pages": [
     "pages/index/index",
     "pages/user/index",
-    "pages/video/index"
+    "pages/video/index",
+    "pages/login/login"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin"
+    "navigationBarBackgroundColor": "#f01313",
+    "navigationBarTitleText": ""
   },
   "tabBar": {
     "selectedColor": "#f01313",
     "color": "#333",
     "backgroundColor": "#fff",
-    "list": [{
+    "list": [
+      {
         "pagePath": "pages/index/index",
         "text": "主页",
         "iconPath": "/static/images/tabs/home.png",

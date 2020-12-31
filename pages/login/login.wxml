@@ -1,0 +1,18 @@
+<view class="container">
+  <view class="wrapper">
+    <view class="left_top_sign">LOGIN</view>
+    <view class="welcome">欢迎回来！</view>
+    <view class="input_content">
+      <view class="input_item" wx:for="{{2}}">
+        <text class="tit"></text>
+        <input type="text" placeholder="" />
+      </view>
+    </view>
+    <button class="confirm_btn">登录</button>
+    <view class="forget_section">忘记密码?</view>
+  </view>
+  <view class="register_section">
+    还没有账号?
+    <text>马上注册</text>
+  </view>
+</view>

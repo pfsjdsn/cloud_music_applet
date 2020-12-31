@@ -70,6 +70,12 @@
         {
           "name": "user",
           "pathName": "pages/user/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "login",
+          "pathName": "pages/login/login",
           "scene": null
         }
       ]
