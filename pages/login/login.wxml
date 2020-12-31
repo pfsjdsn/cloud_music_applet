@@ -3,12 +3,16 @@
     <view class="left_top_sign">LOGIN</view>
     <view class="welcome">欢迎回来！</view>
     <view class="input_content">
-      <view class="input_item" wx:for="{{2}}">
-        <text class="tit"></text>
-        <input type="text" placeholder="" />
+      <view class="input_item">
+        <text class="tit">手机号码</text>
+        <input type="text" placeholder="请输入手机号码" bindinput="handleInput" data-type="phone"/>
+      </view>
+      <view class="input_item">
+        <text class="tit">密码</text>
+        <input type="password" placeholder="请输入密码" bindinput="handleInput" data-type="password"/>
       </view>
     </view>
-    <button class="confirm_btn">登录</button>
+    <button class="confirm_btn" bindtap="login">登录</button>
     <view class="forget_section">忘记密码?</view>
   </view>
   <view class="register_section">

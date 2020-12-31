@@ -1,6 +1,6 @@
 <div class="index_container">
   <!-- 轮播图 -->
-  <swiper wx:if="{{1 == 0}}" class="banners" indicator-dots indicator-color="ivory" indicator-active-color="#d43c33"
+  <swiper class="banners" indicator-dots indicator-color="ivory" indicator-active-color="#d43c33"
     interval="2000">
     <swiper-item wx:for="{{banners}}" wx:key="index">
       <image src="{{item.pic}}"></image>
@@ -14,7 +14,7 @@
     </view>
   </view>
   <!-- 推荐歌曲区域 -->
-  <view class="recommend_container" wx:if="{{1 == 0}}">
+  <view class="recommend_container">
     <!-- 头部 -->
     <NavHeader title="推荐歌曲" nav="为你精心推荐"></NavHeader>
     <!-- 内容区 -->
