@@ -1,14 +1,15 @@
 <view class="user_container">
   <view class="user_section">
     <image src="/static/images/personal/bgImg2.jpg" class="bg"></image>
-    <view class="user_info_box">
+    <view class="user_info_box" bindtap="toLogin">
       <!-- 头像 -->
       <view class="portrait_box">
-        <image  src="/static/images/personal/bgImg2.jpg"></image>
+        <image  src="{{userInfo.avatarUrl ? userInfo.avatarUrl : '/static/images/personal/missing-face.png'}}"></image>
       </view>
       <!-- 信息 -->
       <view class="info_box">
-        <text class="username">游客</text>
+        <text class="username">{{userInfo.nickname ? userInfo.nickname : '游客'}}</text>
+
       </view>
     </view>
     <!-- vip -->
@@ -44,12 +45,12 @@
       <view class="recent_play_container">
         <text class="title">最近播放</text>
         <!-- 最近播放记录 -->
-        <scroll-view class="recent_scroll">
-          <view class="recent_item">
-            <image src=""></image>
+        <scroll-view  scroll-x class="recent_scroll" enable-flex  wx:if="{{recentPlayList.length}}">
+          <view class="recent_item" wx:for="{{recentPlayList}}" wx:key="id">
+            <image src="{{item.song.al.picUrl}}"></image>
           </view>
         </scroll-view>
-        <view>暂无播放记录</view>
+        <view wx:else>暂无播放记录</view>
       </view>
 
       <!-- 模块列表 -->

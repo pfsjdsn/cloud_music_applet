@@ -74,7 +74,13 @@
         },
         {
           "name": "login",
-          "pathName": "pages/login/login",
+          "pathName": "pages/login/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "video",
+          "pathName": "pages/video/index",
           "scene": null
         }
       ]

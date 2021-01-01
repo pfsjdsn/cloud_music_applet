@@ -1,1 +1,92 @@
-/* pages/video/video.wxss */
+.video_container .header {
+  display: flex;
+  padding: 10rpx;
+}
+.video_container .header image {
+  width: 60rpx;
+  height: 60rpx;
+}
+.video_container .header .search {
+  border: 1rpx solid #eee;
+  flex: 1;
+  margin: 0 20rpx;
+  font-size: 26rpx;
+  text-align: center;
+  line-height: 60rpx;
+  color: #f01313;
+}
+.video_container .nav_scroll {
+  display: flex;
+  white-space: nowrap;
+  height: 60rpx;
+}
+.video_container .nav_scroll .nav_item {
+  padding: 0 30rpx;
+  font-size: 28rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  box-sizing: border-box;
+}
+.video_container .nav_scroll .nav_item .nav_content {
+  height: 60rpx;
+  box-sizing: border-box;
+}
+.video_container .nav_scroll .nav_item .active {
+  border-bottom: 2rpx solid #f01313;
+}
+.video_container .video_scroll {
+  margin: 20rpx 0 0 0;
+}
+.video_container .video_scroll .video_item {
+  padding: 0 3%;
+}
+.video_container .video_scroll .video_item video {
+  width: 100%;
+  height: 360rpx;
+  border-radius: 10rpx;
+}
+.video_container .video_item .content {
+  font-size: 26rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  max-width: 500rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.video_container .video_item .content .footer {
+  border-top: 1rpx solid #eee;
+  padding: 20rpx 0;
+}
+.video_container .video_item .content .footer .avatar {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.video_container .video_item .content .footer .nickName {
+  font-size: 26rpx;
+  vertical-align: middle;
+  margin-left: 20rpx;
+}
+.video_container .video_item .content .footer .comments_praised {
+  float: right;
+}
+.video_container .video_item .content .footer .btn {
+  display: inline;
+  padding: 0;
+  background-color: transparent;
+  border-color: transparent;
+}
+.video_container .video_item .content .footer .btn:after {
+  border: none;
+}
+.video_container .video_item .content .footer .item {
+  margin-left: 50rpx;
+  position: relative;
+}
+.video_container .video_item .content .footer .item .count {
+  position: absolute;
+  top: -20rpx;
+  font-size: 20rpx;
+}

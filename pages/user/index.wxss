@@ -132,18 +132,13 @@
   display: flex;
   height: 200rpx;
 }
-.user_container .cover_container .personl_content .recent_play_container scroll-view {
-  display: flex;
-  height: 160rpx;
-}
-.user_container .cover_container .personl_content .recent_play_container scroll-view .recent_item {
+.user_container .cover_container .personl_content .recent_play_container .recent_scroll .recent_item {
   margin: 0 20rpx 0 0;
 }
-.user_container .cover_container .personl_content .recent_play_container scroll-view .recent_item img {
-  width: 160rpx;
-  height: 160rpx;
-  margin: 0 0 0 20rpx;
-  border-radius: 20rpx;
+.user_container .cover_container .personl_content .recent_play_container .recent_scroll .recent_item image {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 10rpx;
 }
 .user_container .cover_container .personl_content .card_list {
   margin: 20rpx 0 0 0;

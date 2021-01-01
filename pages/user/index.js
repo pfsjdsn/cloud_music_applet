@@ -8,6 +8,8 @@
 let startY = 0; //手指起始坐标
 let moveY = 0 //手指移动坐标
 let moveDistance = 0 // //手指移动的距离
+
+import request from '../../utils/request'
 Page({
 
   /**
@@ -29,10 +31,32 @@ Page({
     }],
     moduleList: [{title: '我的音乐'},{title: '我的收藏'},{title: '我的电台'}],
     converTransform: 'translateY(0rpx)',
-    coverTransition: ''
+    coverTransition: '',
+    userInfo: {}, // 用户信息
+    recentPlayList: [] // 播放记录
   },
   onLoad: function (options) {
 
+  },
+  onShow() {
+    let userInfo = JSON.parse(wx.getStorageSync('userInfo'))
+    if (userInfo) {
+      this.setData({
+        userInfo
+      })
+    }
+    this.getrecentPlayList(userInfo.userId)
+  },
+  async getrecentPlayList(uid) {
+    let recentPlayListData = await request('/user/record', {uid, type: 0})
+    let index = 0
+    let recentPlayList = recentPlayListData.allData.splice(0,10).map(item => { // 截取前10条记录,再增加一个id字段
+      item.id = index++
+      return item
+    })
+    this.setData({
+      recentPlayList
+    })
   },
   // 点击
   handleTouchStart(e) {
@@ -62,4 +86,10 @@ Page({
       coverTransition: 'transform 1s linear'
     })
   },
+  toLogin() {
+    wx.navigateTo({
+      url: '/pages/login/index',
+    })
+    
+  }
 })
