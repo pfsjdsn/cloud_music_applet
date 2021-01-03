@@ -8,7 +8,7 @@
   </swiper>
   <!-- 5个图标导航区域 -->
   <view class="nav_container">
-    <view class="nav_item" wx:for="{{navigationList}}" wx:key="index">
+    <view class="nav_item" wx:for="{{navigationList}}" wx:key="index" bindtap="handleJump" data-index="{{index}}">
       <text class="iconfont {{item.iconName}}"></text>
       <text>{{item.title}}</text>
     </view>

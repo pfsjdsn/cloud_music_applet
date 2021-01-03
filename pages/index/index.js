@@ -54,5 +54,14 @@ Page({
       topList.push(topListItem)
       this.setData({topList})
     }
+  },
+  // 导航区域跳转
+  handleJump(e) {
+    let {index} = e.currentTarget.dataset
+    if (index == 0) {
+      wx.navigateTo({
+        url: '/pages/recommendSong/index',
+      })
+    }
   }
 })

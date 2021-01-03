@@ -3,13 +3,17 @@
     "pages/index/index",
     "pages/user/index",
     "pages/video/index",
-    "pages/login/index"
+    "pages/login/index",
+    "pages/recommendSong/index",
+    "pages/songDetail/index"
+
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#f01313",
     "navigationBarTitleText": ""
   },
+  "requiredBackgroundModes": ["audio"],
   "tabBar": {
     "selectedColor": "#f01313",
     "color": "#333",

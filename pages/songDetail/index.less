@@ -24,7 +24,7 @@
     transform: rotate(-20deg); // 右20度
     transition: transform 1s;
   }
-  .needleRotate {
+  .needle_rotate {
     transform: rotate(0deg); // 旋转回0度，到原来的位置
   }
   // 磁盘
@@ -50,4 +50,41 @@
       border-radius: 50%;
     }
   }
+  .dis_animation {
+    animation: disc 4s linear infinite; // 名字 时间 速度曲线（匀速） 次数（无限）
+    animation-delay: 1s; // 延迟
+  }
+  /*
+  *  @keyframes ： 1 from to： 用于简单动画， 只有起始和结束帧
+                   2 百分比：用于复杂的动画， 动画不止两帧， ０％～100%， 可任意拆分
+  */
+  @keyframes disc {
+   from {
+     transform: rotate(0deg);
+   } 
+   to {
+    transform: rotate(360deg);
+   }
+  }
+  // 底部控制播放区域
+  .music_control {
+    position: absolute;
+    bottom: 40rpx;
+    left: 0;
+    border-top: 1rpx solid #fff;
+    width: 100%;
+    display: flex;
+    text {
+      width: 20%;
+      height: 120rpx;
+      line-height: 120rpx;
+      text-align: center;
+      color: #fff;
+      font-size: 50rpx;
+    }
+    .big {
+      font-size: 70rpx;
+    }
+  }
+
 }

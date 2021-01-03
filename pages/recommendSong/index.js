@@ -42,4 +42,12 @@ Page({
       recommendList: recommendList.recommend
     })
   }, 
+  // 跳转到歌曲详情
+  toSongDetail(e) {
+    console.log(e);
+    let {song} = e.currentTarget.dataset
+    wx.navigateTo({
+      url: '/pages/songDetail/index?musicId=' + song.id,
+    })
+  },
 })

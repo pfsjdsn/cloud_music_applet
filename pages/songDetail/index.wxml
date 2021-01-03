@@ -1,10 +1,18 @@
 <view class="song_detail_container">
-  <view class="author">111111</view>
+  <view class="author">{{song.ar[0].name}}</view>
   <view class="circle"></view>
-  <image class="needle {{isPlay ? 'needleRotate' : ''}}" src="/static/images/song/needle.png"></image>
-
-  <view class="dis_container">
+  <!-- 摇杆 -->
+  <image class="needle {{isPlay ? 'needle_rotate' : ''}}" src="/static/images/song/needle.png"></image>
+  <view class="dis_container  {{isPlay ? 'dis_animation' : ''}}" >
     <image class="disc" src="/static/images/song/disc.png"></image>
-    <image class="music_img" src="/static/images/nvsheng.jpg"></image>
+    <image class="music_img" src="{{song.al.picUrl}}"></image>
+  </view>
+  <!-- 底部控制播放区域 -->
+  <view class="music_control">
+    <text class="iconfont iconicon--"></text>
+    <text class="iconfont iconshangyishou_huaban"></text>
+    <text class="iconfont  big {{isPlay ? 'iconplus-pause' : 'iconbofang'}}" bindtap="handleMusicPlay"></text>
+    <text class="iconfont iconxiayishou_huaban"></text>
+    <text class="iconfont iconbofangliebiao"></text>
   </view>
 </view>

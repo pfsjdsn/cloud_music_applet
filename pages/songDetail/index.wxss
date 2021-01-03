@@ -4,6 +4,10 @@
   align-items: center;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
+  /*
+  *  @keyframes ： 1 from to： 用于简单动画， 只有起始和结束帧
+                   2 百分比：用于复杂的动画， 动画不止两帧， ０％～100%， 可任意拆分
+  */
 }
 .song_detail_container .circle {
   z-index: 100;
@@ -24,7 +28,7 @@
   transform: rotate(-20deg);
   transition: transform 1s;
 }
-.song_detail_container .needleRotate {
+.song_detail_container .needle_rotate {
   transform: rotate(0deg);
 }
 .song_detail_container .dis_container {
@@ -48,4 +52,35 @@
   width: 370rpx;
   height: 370rpx;
   border-radius: 50%;
+}
+.song_detail_container .dis_animation {
+  animation: disc 4s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes disc {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.song_detail_container .music_control {
+  position: absolute;
+  bottom: 40rpx;
+  left: 0;
+  border-top: 1rpx solid #fff;
+  width: 100%;
+  display: flex;
+}
+.song_detail_container .music_control text {
+  width: 20%;
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 50rpx;
+}
+.song_detail_container .music_control .big {
+  font-size: 70rpx;
 }
