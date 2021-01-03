@@ -6,15 +6,39 @@
     <image src="/static/images/logo.png"></image>
   </view>
   <!-- 导航 -->
-  <scroll-view scroll-x enable-flex class="nav_scroll">
-    <view class="nav_item" wx:for="{{videoGroupList}}" wx:key="id">
+  <scroll-view scroll-x enable-flex class="nav_scroll" scroll-into-view="{{'scroll' + navId}}" scroll-with-animation>
+    <view id="{{'scroll' + item.id}}" class="nav_item" wx:for="{{videoGroupList}}" wx:key="id">
       <view class="nav_content {{navId == item.id ? 'active' : ''}}" bindtap="changeNav" data-id="{{item.id}}">
         {{item.name}}
       </view>
     </view>
   </scroll-view>
   <!-- 视频列表 -->
-  <scroll-view scroll-y class="video_scroll">
- 
+  <scroll-view scroll-y class="video_scroll" refresher-enabled    bindrefresherrefresh="handleRefresher" refresher-triggered="{{isTriggered}}" bindscrolltolower="handleToLower">
+    <view class="video_item" wx:for="{{videoList}}" wx:key="id">
+      <video src="{{item.data.urlInfo.url}}" bindplay="handlePlay" 
+      data-vid="{{item.data.vid}}" poster="{{item.data.coverUrl}}" class="common" wx:if="{{videoId == item.data.vid}}"
+      object-fit="fill" bindtimeupdate="handleTimeUpdate" bindended="handleEnded"></video>
+      <!-- 性能优化，使用image图片代替video标签 -->
+      <image class="common"  src="{{item.data.coverUrl}}" bindtap="handlePlay"   data-vid="{{item.data.vid}}" wx:else></image>
+      <view class="content">{{item.data.title}}</view>
+      <view class="footer">
+        <image src="{{item.data.creator.avatarUrl}}" class="avatar"></image>
+        <text class="nickName">{{item.data.creator.nickname}}</text>
+        <view class="comments_praised">
+          <text class="item">
+            <text class="iconfont iconxingquaihao"></text>
+            <text class="count">{{item.data.praisedCount}}</text>
+          </text>
+          <text class="item">
+            <text class="iconfont iconpinglun"></text>
+            <text class="count">{{item.data.commentCount}}</text>
+          </text>
+          <button open-type="share" class="item btn">
+            <text class="iconfont iconziyuan"></text>
+          </button>
+        </view>
+      </view>
+    </view>
   </scroll-view>
 </view>

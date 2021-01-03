@@ -1,3 +1,6 @@
+.video_container {
+  /* 视频列表 */
+}
 .video_container .header {
   display: flex;
   padding: 10rpx;
@@ -40,7 +43,19 @@
 .video_container .video_scroll .video_item {
   padding: 0 3%;
 }
-.video_container .video_scroll .video_item video {
+.video_container .video_scroll .video_item .common {
+  width: 100%;
+  height: 360rpx;
+  border-radius: 10rpx;
+}
+.video_container .video_scroll {
+  margin-top: 10rpx;
+  height: calc(100vh - 152rpx);
+}
+.video_container .video_item {
+  padding: 0 3%;
+}
+.video_container .video_item .common {
   width: 100%;
   height: 360rpx;
   border-radius: 10rpx;
@@ -54,38 +69,41 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.video_container .video_item .content .footer {
+.video_container .footer {
   border-top: 1rpx solid #eee;
   padding: 20rpx 0;
 }
-.video_container .video_item .content .footer .avatar {
+.video_container .footer .avatar {
   width: 60rpx;
   height: 60rpx;
   border-radius: 50%;
   vertical-align: middle;
 }
-.video_container .video_item .content .footer .nickName {
+.video_container .footer .nickName {
   font-size: 26rpx;
   vertical-align: middle;
   margin-left: 20rpx;
 }
-.video_container .video_item .content .footer .comments_praised {
+.video_container .footer .comments_praised {
   float: right;
 }
-.video_container .video_item .content .footer .btn {
+.video_container .footer .comments_praised .iconfont {
+  color: #f01313;
+}
+.video_container .comments_praised .btn {
   display: inline;
   padding: 0;
   background-color: transparent;
   border-color: transparent;
 }
-.video_container .video_item .content .footer .btn:after {
+.video_container .comments_praised .btn:after {
   border: none;
 }
-.video_container .video_item .content .footer .item {
+.video_container .comments_praised .item {
   margin-left: 50rpx;
   position: relative;
 }
-.video_container .video_item .content .footer .item .count {
+.video_container .comments_praised .item .count {
   position: absolute;
   top: -20rpx;
   font-size: 20rpx;

@@ -1,0 +1,73 @@
+.recommend_song_container {
+  // 头部
+  .header {
+    position: relative;
+    width: 100%;
+    height: 300rpx;
+    image {
+      width: 100%;
+      height: 100%;
+    }
+    .date {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin: -50rpx 0 0 -150rpx;
+      width: 300rpx;
+      height: 100rpx;
+      text-align: center;
+      line-height: 100rpx;
+      color: #fff;
+      font-size: 38rpx;
+    }
+  }
+  // 列表
+  .list_container {
+    position: relative;
+    top: -20rpx;
+    padding: 0 20rpx;
+    border-radius: 30rpx;
+    background: #fff;
+    .list_header {
+      height: 80rpx;
+      line-height: 80rpx;
+      .change_more {
+        float: right;
+      }
+    }
+    .list_scroll {
+      height: calc(100vh - 380rpx);
+      .scroll_item {
+        display: flex;
+        position: relative;
+        margin: 0 0 20rpx 0;
+        image {
+          width: 80rpx;
+          height: 80rpx;
+          border-radius: 8rpx;
+        }
+        .music_info {
+          display: flex;
+          flex-direction: column;
+          margin: 0 0 0 20rpx;
+          text {
+            height: 40rpx;
+            line-height: 40rpx;
+            font-size: 24rpx;
+            max-width: 500rpx;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+        .iconfont {
+          position: absolute;
+          right: 0;
+          width: 80rpx;
+          height: 80rpx;
+          text-align: right;
+        }
+      }
+    }
+  }
+}

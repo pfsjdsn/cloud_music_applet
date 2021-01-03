@@ -43,7 +43,7 @@
     margin: 20rpx 0 0 0;
     .video_item {
       padding: 0 3%;
-      video {
+      .common {
         width: 100%;
         height: 360rpx;
         border-radius: 10rpx;
@@ -51,52 +51,69 @@
     }
   }
   
+/* 视频列表 */
+.video_scroll {
+  margin-top: 10rpx;
+  height: calc(100vh - 152rpx); // 视口高度 - 搜索 - 导航 
+}
 .video_item {
+  padding: 0 3%;
+  .common {
+    width: 100%;
+    height: 360rpx;
+    border-radius: 10rpx;
+  }
   .content {
     font-size: 26rpx;
-    height:80rpx;
+    height: 80rpx;
     line-height: 80rpx;
     max-width: 500rpx;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    .footer {
-      border-top: 1rpx solid #eee;
-      padding: 20rpx 0;
-      .avatar {
-        width: 60rpx;
-        height: 60rpx;
-        border-radius: 50%;
-        vertical-align: middle;
-      }
-      .nickName {
-        font-size: 26rpx;
-        vertical-align: middle;
-        margin-left: 20rpx;
-      }
-      .comments_praised {
-        float: right;
-      }
-      .btn {
-        display: inline;
-        padding: 0;
-        background-color: transparent;
-        border-color: transparent;
-      }
-      .btn:after {
-        border: none;
-      }
-      .item {
-        margin-left: 50rpx;
-        position: relative;
-      }
-      .item .count {
-        position: absolute;
-        top: -20rpx;
-        font-size: 20rpx;
-      }
+  }
+}
+.footer {
+  border-top: 1rpx solid #eee;
+  padding: 20rpx 0;
+  .avatar {
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 50%;
+    vertical-align: middle;
+  }
+  .nickName {
+    font-size: 26rpx;
+    vertical-align: middle;
+    margin-left: 20rpx;
+  }
+  .comments_praised {
+    float: right;
+    .iconfont  {
+      color: #f01313;
     }
   }
 }
+.comments_praised {
+  .btn {
+    display: inline;
+    padding: 0;
+    background-color: transparent;
+    border-color: transparent;
+    &:after {
+      border: none;
+    }
+  }
+  .item {
+    margin-left: 50rpx;
+    position: relative;
+    .count {
+      position: absolute;
+      top: -20rpx;
+      font-size: 20rpx;
+    }
+  }
+}
+
 
 }

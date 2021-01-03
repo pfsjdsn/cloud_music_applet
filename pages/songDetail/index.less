@@ -1,0 +1,53 @@
+.song_detail_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  .circle {
+    z-index: 100;
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 50%;
+    background: #e1e1e1;
+    margin: 10rpx 0;
+  }
+  // 摇杆
+  .needle {
+    position: relative;
+    z-index: 99;
+    top: -40rpx;
+    left: 60rpx;
+    width: 192rpx;
+    height: 274rpx;
+    transform-origin: 40rpx 0; // 旋转中心点， x, y 
+    transform: rotate(-20deg); // 右20度
+    transition: transform 1s;
+  }
+  .needleRotate {
+    transform: rotate(0deg); // 旋转回0度，到原来的位置
+  }
+  // 磁盘
+  .dis_container {
+    position: relative;
+    z-index: 98;
+    top: -170rpx;
+    width: 598rpx;
+    height: 598rpx;
+    .disc {
+      width: 598rpx;
+      height: 598rpx;
+    }
+    .music_img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: 370rpx;
+      height: 370rpx;
+      border-radius: 50%;
+    }
+  }
+}

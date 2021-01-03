@@ -1,0 +1,10 @@
+<view class="song_detail_container">
+  <view class="author">111111</view>
+  <view class="circle"></view>
+  <image class="needle {{isPlay ? 'needleRotate' : ''}}" src="/static/images/song/needle.png"></image>
+
+  <view class="dis_container">
+    <image class="disc" src="/static/images/song/disc.png"></image>
+    <image class="music_img" src="/static/images/nvsheng.jpg"></image>
+  </view>
+</view>
