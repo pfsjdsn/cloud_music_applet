@@ -7,12 +7,25 @@
     <image class="disc" src="/static/images/song/disc.png"></image>
     <image class="music_img" src="{{song.al.picUrl}}"></image>
   </view>
+  <!-- 进度条 -->
+  <view class="progress_control">
+    <text>00:00</text>
+    <!-- 大进度条 -->
+    <view class="bar_control">
+      <!-- 实时进度条 -->
+      <view class="audio_current_time_bar">
+        <!-- 小圆球 -->
+        <view class="audio_circle"></view>
+      </view>
+    </view>
+    <text>03:00</text>
+  </view>
   <!-- 底部控制播放区域 -->
   <view class="music_control">
     <text class="iconfont iconicon--"></text>
-    <text class="iconfont iconshangyishou_huaban" bindtap="handleSwitch"></text>
+    <text class="iconfont iconshangyishou_huaban" bindtap="handleSwitch" data-type="pre"></text>
     <text class="iconfont  big {{isPlay ? 'iconplus-pause' : 'iconbofang'}}" bindtap="handleMusicPlay"></text>
-    <text class="iconfont iconxiayishou_huaban" bindtap="handleSwitch"></text>
+    <text class="iconfont iconxiayishou_huaban" bindtap="handleSwitch" data-type="next"></text>
     <text class="iconfont iconbofangliebiao"></text>
   </view>
 </view>
