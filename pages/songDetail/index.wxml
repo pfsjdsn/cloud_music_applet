@@ -10,9 +10,9 @@
   <!-- 底部控制播放区域 -->
   <view class="music_control">
     <text class="iconfont iconicon--"></text>
-    <text class="iconfont iconshangyishou_huaban"></text>
+    <text class="iconfont iconshangyishou_huaban" bindtap="handleSwitch"></text>
     <text class="iconfont  big {{isPlay ? 'iconplus-pause' : 'iconbofang'}}" bindtap="handleMusicPlay"></text>
-    <text class="iconfont iconxiayishou_huaban"></text>
+    <text class="iconfont iconxiayishou_huaban" bindtap="handleSwitch"></text>
     <text class="iconfont iconbofangliebiao"></text>
   </view>
 </view>
