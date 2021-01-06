@@ -9,16 +9,16 @@
   </view>
   <!-- 进度条 -->
   <view class="progress_control">
-    <text>00:00</text>
+    <text>{{currentTime}}</text>
     <!-- 大进度条 -->
     <view class="bar_control">
       <!-- 实时进度条 -->
-      <view class="audio_current_time_bar">
+      <view class="audio_current_time_bar" style="width: {{currentWidth + 'rpx'}}">
         <!-- 小圆球 -->
         <view class="audio_circle"></view>
       </view>
     </view>
-    <text>03:00</text>
+    <text>{{durationTime}}</text>
   </view>
   <!-- 底部控制播放区域 -->
   <view class="music_control">

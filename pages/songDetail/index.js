@@ -10,11 +10,12 @@
       2. 提供事件参数对象， 等同于原生事件的event对象
       3. 发布方: PubSub.publish(事件名，提供的数据)
       4. 发布方是提供数据的一方
- * 
+ * js库： momentjs日期处理类库
  */
 import request from '../../utils/request'
+import moment from 'moment'
 
-import PubSub from 'pubsub-js'
+import PubSub from 'pubsub-js' 
 const app = getApp()
 
 Page({
@@ -23,6 +24,9 @@ Page({
     song: {}, //音乐详情
     musicId: '', //音乐id
     musicLink: '', // 音乐链接
+    currentTime: '', // 播放实时时间
+    durationTime: '', // 播放总时长
+    currentWidth: 200, // 实时进度条的宽度
   },
 
   /**
@@ -53,6 +57,20 @@ Page({
     this.backgroundAudioManager.onStop(() => {
       this.changePlayState(false)
     })
+    // 监听实时播放的进度
+    this.backgroundAudioManager.onTimeUpdate( () => {
+      console.log('总时长',  this.backgroundAudioManager.duration)
+      console.log('实时时长',  this.backgroundAudioManager.currentTime) // s
+      let currentTime = moment(this.backgroundAudioManager.currentTime * 1000).format('mm:ss')
+      // 当前时间  当前进度条宽度
+      // ——————— = ————————————  
+      // 总时间      进度条总宽度
+      let currentWidth = this.backgroundAudioManager.currentTime/this.backgroundAudioManager.duration*450
+      this.setData({
+        currentTime,
+        currentWidth
+      })
+    })
 },
   // 修改播放状态封装的函数
   changePlayState(isPlay) {
@@ -73,8 +91,11 @@ Page({
   // 获取音乐详情
   async getMusicInfo(musicId) {
     let res = await request('/song/detail',{ids: musicId})
+    let durationTime = moment(res.songs[0].dt).format('mm:ss')
+    console.log(durationTime);
     this.setData({
-      song: res.songs[0]
+      song: res.songs[0],
+      durationTime
     })
     // 动态设置当前页面标题
     wx.setNavigationBarTitle({

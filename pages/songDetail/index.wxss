@@ -84,7 +84,6 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100rpx;
   z-index: 1;
   height: 4rpx;
   background: red;
