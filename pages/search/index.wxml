@@ -3,21 +3,42 @@
   <view class="header">
     <view class="search_input">
       <text class="iconfont iconsousuo1"></text>
-      <input type="text" placeholder="{{placeholderContent}}" placeholder-class="placeholder"/>
+      <input type="text" placeholder="{{placeholderContent}}" placeholder-class="placeholder" bindinput="handleInputChange"/>
     </view>
   <text class="cancel">取消</text>
   </view>
-
-  <!-- 热搜榜 -->
-  <view class="hot_container">
-    <view class="title">热搜榜</view>
-    <!-- 热搜列表 -->
-    <view class="hot_list">
-      <view class="hot_item" wx:for="{{hostList}}" wx:key="searchWord">
-        <view class="order">{{index + 1}}</view>
-        <view class="order">{{item.searchWord}}</view>
-        <image wx:if="{{item.iconUrl}}" src="{{item.iconUrl}}" class="icon_image"></image>
+  <!-- 搜索内容展示 -->
+  <block wx:if="{{searchList.length}}">
+    <view class="show_search_content">
+    <view class="search_content">搜索内容：{{searchContent}}</view>
+    <view class="search_list">
+      <view class="search_item" wx:for="{{searchList}}" wx:key="id">
+        <text class="iconfont iconsousuo1"></text>
+        <text class="content">{{item.name}}</text>
       </view>
     </view>
-  </view>
+    </view>
+  </block>
+  <block wx:else>
+    <!-- 搜索历史记录 -->
+    <view class="history">
+      <view class="title">历史</view>
+      <view class="history_item" wx:for="{{4}}">
+        搜索历史1
+      </view>
+      <text class="iconfont iconshanchu"></text>
+    </view>
+    <!-- 热搜榜 -->
+    <view class="hot_container"> 
+      <view class="title">热搜榜</view>
+      <!-- 热搜列表 -->
+      <view class="hot_list">
+        <view class="hot_item" wx:for="{{hostList}}" wx:key="searchWord">
+          <view class="order">{{index + 1}}</view>
+          <view class="order">{{item.searchWord}}</view>
+          <image wx:if="{{item.iconUrl}}" src="{{item.iconUrl}}" class="icon_image" ></image>
+        </view>
+      </view>
+    </view>
+  </block>
 </view>

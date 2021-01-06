@@ -29,6 +29,51 @@
   width: 100rpx;
   text-align: center;
 }
+.search_container .show_search_content .search_content {
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 24rpx;
+  border-bottom: 1rpx solid #d43c33;
+}
+.search_container .show_search_content .search_list .search_item {
+  height: 80rpx;
+  line-height: 80rpx;
+  display: flex;
+}
+.search_container .show_search_content .search_list .search_item .content {
+  flex: 1;
+  margin: 0 0 0 20rpx;
+  border-bottom: 1rpx solid #eee;
+  font-size: 26rpx;
+}
+.search_container .history {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  line-height: 50rpx;
+  margin: 20rpx 0;
+}
+.search_container .history .title {
+  font-size: 28rpx;
+  height: 50rpx;
+}
+.search_container .history .history_item {
+  font-size: 26rpx;
+  background: #ededed;
+  margin: 0 0 20rpx 20rpx;
+  padding: 0 30rpx;
+  border-radius: 20rpx;
+  height: 50rpx;
+}
+.search_container .history .iconshanchu {
+  position: absolute;
+  bottom: 10rpx;
+  right: 15rpx;
+  font-size: 36rpx;
+}
+.search_container .hot_container {
+  margin: 30rpx 0 0 0;
+}
 .search_container .hot_container .title {
   font-size: 28rpx;
   height: 80rpx;
@@ -40,6 +85,7 @@
   flex-wrap: wrap;
 }
 .search_container .hot_container .hot_list .hot_item {
+  display: flex;
   width: 50%;
   height: 80rpx;
   line-height: 80rpx;
