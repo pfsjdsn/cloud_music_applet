@@ -68,7 +68,7 @@ Page({
       let currentWidth = this.backgroundAudioManager.currentTime/this.backgroundAudioManager.duration*450
       this.setData({
         currentTime,
-        currentWidth
+        currentWidth  
       })
     })
 },
