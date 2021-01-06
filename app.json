@@ -5,7 +5,8 @@
     "pages/video/index",
     "pages/login/index",
     "pages/recommendSong/index",
-    "pages/songDetail/index"
+    "pages/songDetail/index",
+    "pages/search/index"
 
   ],
   "window": {

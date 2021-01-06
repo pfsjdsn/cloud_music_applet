@@ -94,6 +94,12 @@
         {
           "name": "songDetail",
           "pathName": "pages/songDetail/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "search",
+          "pathName": "pages/search/index",
           "scene": null
         }
       ]

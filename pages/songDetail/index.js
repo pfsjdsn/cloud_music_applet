@@ -24,8 +24,8 @@ Page({
     song: {}, //音乐详情
     musicId: '', //音乐id
     musicLink: '', // 音乐链接
-    currentTime: '', // 播放实时时间
-    durationTime: '', // 播放总时长
+    currentTime: '00:00', // 播放实时时间
+    durationTime: '00:00', // 播放总时长
     currentWidth: 200, // 实时进度条的宽度
   },
 
@@ -56,6 +56,17 @@ Page({
     })
     this.backgroundAudioManager.onStop(() => {
       this.changePlayState(false)
+    })
+    // 音乐自然结束
+    this.backgroundAudioManager.onEnded(() => {
+      // 切换下一首并自动播放
+      PubSub.publish('switchTpye', 'next')
+      // 进度条宽度重置为0,时间还原为0
+      this.setData({
+        currentWidth: 0,
+        currentTime: '00:00'
+      })
+
     })
     // 监听实时播放的进度
     this.backgroundAudioManager.onTimeUpdate( () => {
