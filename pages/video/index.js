@@ -1442,4 +1442,9 @@ Page({
       path: '/pages/video/index'
     }
   },
+  toSearch() {
+    wx.navigateTo({
+      url: '/pages/search/index',
+    })
+  },
 })

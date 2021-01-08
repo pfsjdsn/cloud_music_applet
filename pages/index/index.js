@@ -60,7 +60,7 @@ Page({
     let {index} = e.currentTarget.dataset
     if (index == 0) {
       wx.navigateTo({
-        url: '/pages/recommendSong/index',
+        url: '/songPackage/pages/recommendSong/index',
       })
     }
   }

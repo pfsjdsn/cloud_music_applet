@@ -100,6 +100,12 @@
         {
           "name": "search",
           "pathName": "pages/search/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "other",
+          "pathName": "pages/other/index",
           "scene": null
         }
       ]

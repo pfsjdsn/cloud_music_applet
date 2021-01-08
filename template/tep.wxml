@@ -1,0 +1,9 @@
+<!-- 自定义模板 -->
+<template name="msgItem">
+  <view>
+    <view class="title">我是自定义模板</view>
+    <view>name: {{name}}</view>
+    <view>age: {{age}}</view>
+  </view>
+  <button bindtap="login"></button>
+</template>

@@ -12,7 +12,7 @@
       4. 发布方是提供数据的一方
  * js库： momentjs日期处理类库
  */
-import request from '../../utils/request'
+import request from '../../../utils/request'
 import moment from 'moment'
 
 import PubSub from 'pubsub-js' 

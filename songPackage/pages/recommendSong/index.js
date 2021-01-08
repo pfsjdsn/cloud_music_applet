@@ -13,7 +13,7 @@
       4. 发布方是提供数据的一方
  * 
  */
-import request from '../../utils/request'
+import request from '../../../utils/request'
 import PubSub from 'pubsub-js'
 Page({
 
@@ -40,7 +40,7 @@ Page({
         icon: 'none',
         success: () => {
           wx.reLaunch({
-            url: '/pages/login/index',
+            url: '../../../pages/login/index',
           })
         }
       })
@@ -84,7 +84,7 @@ Page({
     let {song, index} = e.currentTarget.dataset
     this.setData({index})
     wx.navigateTo({
-      url: '/pages/songDetail/index?musicId=' + song.id,
+      url: '../songDetail/index?musicId=' + song.id,
     })
   },
 })

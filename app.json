@@ -4,17 +4,16 @@
     "pages/user/index",
     "pages/video/index",
     "pages/login/index",
-    "pages/recommendSong/index",
-    "pages/songDetail/index",
     "pages/search/index"
-
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#f01313",
     "navigationBarTitleText": ""
   },
-  "requiredBackgroundModes": ["audio"],
+  "requiredBackgroundModes": [
+    "audio"
+  ],
   "tabBar": {
     "selectedColor": "#f01313",
     "color": "#333",
@@ -39,6 +38,27 @@
         "selectedIconPath": "/static/images/tabs/my_o.png"
       }
     ]
+  },
+  "subPackages": [
+    {
+      "root": "songPackage",
+      "pages": [
+        "pages/recommendSong/index",
+        "pages/songDetail/index"
+      ]
+    },
+    {
+      "root": "otherPackage",
+      "name": "other",
+      "pages": [
+        "pages/other/index"
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/index/index": {
+      "packages": ["songPackage", "other"]
+    }
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

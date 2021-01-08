@@ -12,12 +12,13 @@ Page({
     hostList: [], // 热搜榜数据
     searchContent: '', // 用户输入的内容
     searchList: [], // 关键字模糊匹配的数据
+    historyList: []
   },
 
   onLoad: function (options) {
 
     this.getInitData()
-    
+    this.getHistoryList()
   },
   // 获取初始化数据
   async getInitData() {
@@ -28,7 +29,13 @@ Page({
       hostList: hostListData.data
     })
   },
-   handleInputChange(e) {
+  getHistoryList() {
+    let historyList = wx.getStorageSync('historyList')
+    if (historyList) {
+      this.setData({historyList})
+    }
+  },
+  handleInputChange(e) {
     this.setData({
       searchContent: e.detail.value.trim()
     })
@@ -50,10 +57,34 @@ Page({
       })
       return
     }
-    let searchListData = await request('/search', {keywords: this.data.searchContent, limit: 10})
+    let {searchContent, historyList} = this.data
+    let searchListData = await request('/search', {keywords: searchContent, limit: 10})
       this.setData({
         searchList: searchListData.result.songs
     })
-  }
-
+    // 记录去重
+    if(historyList.indexOf(searchContent) !== -1) {
+      historyList.splice(historyList.indexOf(searchContent), 1)
+    }
+    historyList.unshift(searchContent)
+    this.setData({historyList})
+    wx.setStorageSync('historyList', historyList)
+  },
+  clearSearchContent() {
+    this.setData({
+      searchContent: '',
+      searchList: []
+    })
+  },
+  delSearchHistory() {
+    wx.showModal({
+      content: '确认删除吗?',
+      success: (res) => {
+        if (res.confirm) {
+          this.setData({historyList: []})
+          wx.removeStorageSync('historyList')
+        }
+      } 
+    })
+  },
 })
