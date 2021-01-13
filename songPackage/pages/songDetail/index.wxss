@@ -1,4 +1,5 @@
 .song_detail_container {
+  color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,6 +67,7 @@
   }
 }
 .song_detail_container .progress_control {
+  color: #fff;
   position: absolute;
   bottom: 200rpx;
   width: 640rpx;
@@ -76,8 +78,8 @@
 .song_detail_container .progress_control .bar_control {
   position: relative;
   width: 450rpx;
-  height: 4rpx;
-  background: rgba(0, 0, 0, 0.4);
+  height: 2rpx;
+  background: #fff;
   margin: auto;
 }
 .song_detail_container .progress_control .bar_control .audio_current_time_bar {
@@ -86,7 +88,7 @@
   left: 0;
   z-index: 1;
   height: 4rpx;
-  background: red;
+  background: #fff;
 }
 .song_detail_container .progress_control .bar_control .audio_current_time_bar .audio_circle {
   position: absolute;

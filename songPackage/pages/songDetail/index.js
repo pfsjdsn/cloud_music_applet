@@ -96,12 +96,27 @@ Page({
   handleMusicPlay() {
     let isPlay = !this.data.isPlay
     let {musicId, musicLink}  = this.data
-    this.musicConrol(isPlay, musicId, musicLink)
-
+    this.musicConrol(isPflay, musicId, musicLink)
+    if (this.BackgroundAudioManager.src == null) {
+      console.log(111111111);
+      
+    }
   },
   // 获取音乐详情
   async getMusicInfo(musicId) {
     let res = await request('/song/detail',{ids: musicId})
+    if (!res.songs[0]) {
+      wx.showToast({
+        title: '暂无歌曲信息！',
+        icon: 'none'
+      })
+      setTimeout(() => {
+        wx.navigateBack({
+          delta: 1,
+        })
+      }, 1000);
+      return;
+    }
     let durationTime = moment(res.songs[0].dt).format('mm:ss')
     console.log(durationTime);
     this.setData({

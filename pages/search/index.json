@@ -1,4 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "SearchHeader": "../../components/SearchHeader/SearchHeader"
+  },
   "navigationBarTitleText": "搜索音乐"
+  
 }

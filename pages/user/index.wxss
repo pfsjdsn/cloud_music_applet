@@ -119,6 +119,7 @@
   font-size: 22rpx;
 }
 .user_container .cover_container .personl_content {
+  padding: 20rpx;
   background: #fff;
   margin: 20rpx 0 0 0;
 }
@@ -130,14 +131,14 @@
 }
 .user_container .cover_container .personl_content .recent_play_container .recent_scroll {
   display: flex;
-  height: 200rpx;
+  height: 150rpx;
 }
 .user_container .cover_container .personl_content .recent_play_container .recent_scroll .recent_item {
-  margin: 0 20rpx 0 0;
+  margin: 0 36rpx 0 0;
 }
 .user_container .cover_container .personl_content .recent_play_container .recent_scroll .recent_item image {
-  width: 200rpx;
-  height: 200rpx;
+  width: 150rpx;
+  height: 150rpx;
   border-radius: 10rpx;
 }
 .user_container .cover_container .personl_content .card_list {

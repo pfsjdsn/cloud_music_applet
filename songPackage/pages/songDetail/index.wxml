@@ -1,4 +1,5 @@
-<view class="song_detail_container">
+<view class="song_detail_container"  style="background: #155874;">
+  <!-- style="background: url({{song.al.picUrl}})" -->
   <view class="author">{{song.ar[0].name}}</view>
   <view class="circle"></view>
   <!-- 摇杆 -->

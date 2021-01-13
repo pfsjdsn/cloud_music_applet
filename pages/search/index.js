@@ -35,7 +35,7 @@ Page({
       this.setData({historyList})
     }
   },
-  handleInputChange(e) {
+  handleInputChange(e) {    
     this.setData({
       searchContent: e.detail.value.trim()
     })

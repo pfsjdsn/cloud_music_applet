@@ -2,6 +2,9 @@
   <text class="title">{{title}}</text>
   <view>
     <text>{{nav}}</text>
-    <text class="more">查看更多</text>
+    <view class="more">
+      <text>查看更多</text>
+      <text class="iconfont iconyoujiantou"></text>
+    </view>
   </view>
 </view>

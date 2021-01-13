@@ -1,0 +1,8 @@
+<view class="header">
+    <view class="search_input">
+      <text class="iconfont iconsousuo1"></text>
+      <input type="text" value="{{searchContent}}" placeholder="{{placeholderContent}}" placeholder-class="placeholder" bindinput="handleInputChange" bindfocus="handInputFocus"/>
+      <text class="iconfont iconcha1" bindtap="clearSearchContent" hidden="{{!searchContent}}"></text>
+    </view>
+  <text class="cancel">取消</text>
+  </view>

@@ -1,24 +1,47 @@
 .index_container .banners {
-  width: 100%;
+  position: relative;
+  z-index: 1;
+  width: 94.5%;
   height: 300rpx;
+  padding: 20rpx;
 }
 .index_container .banners image {
   width: 100%;
   height: 100%;
+  border-radius: 20rpx;
+}
+.index_container .banners .type_title {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 25rpx;
+  z-index: 20;
+  background: #f01313;
+  color: #fff;
+  border-radius: 20rpx 0 20rpx 0;
+  padding: 10rpx;
+}
+.index_container .banners .color_type {
+  background: #0071f4;
 }
 .index_container .nav_container {
-  display: flex;
+  padding: 20rpx;
 }
 .index_container .nav_container .nav_item {
   display: flex;
-  flex-direction: column;
+  height: 200rpx;
+}
+.index_container .nav_container .nav_item .sroll_item {
+  display: flex;
   align-items: center;
-  width: 20%;
+  flex-direction: column;
+  margin: 0 50rpx 0 0;
 }
-.index_container .nav_container .nav_item text {
+.index_container .nav_container .nav_item .sroll_item text {
   font-size: 26rpx;
+  white-space: nowrap;
 }
-.index_container .nav_container .nav_item .iconfont {
+.index_container .nav_container .nav_item .sroll_item .iconfont {
   width: 100rpx;
   height: 100rpx;
   border-radius: 50%;

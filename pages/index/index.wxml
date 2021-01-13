@@ -1,17 +1,21 @@
 <div class="index_container">
+  <SearchHeader placeholderContent="{{placeholderContent}}" bindhandInputFocus="handInputFocus"></SearchHeader>
   <!-- 轮播图 -->
   <swiper class="banners" indicator-dots indicator-color="ivory" indicator-active-color="#d43c33"
     interval="2000">
-    <swiper-item wx:for="{{banners}}" wx:key="index">
+    <swiper-item wx:for="{{banners}}" wx:key="index" bindtap="toSongDetail" data-id="{{item.targetId}}">
       <image src="{{item.pic}}"></image>
+      <text class="type_title {{item.typeTitle == '活动' ? 'color_type' : ''}}">{{item.typeTitle}}</text>
     </swiper-item>
   </swiper>
   <!-- 5个图标导航区域 -->
   <view class="nav_container">
-    <view class="nav_item" wx:for="{{navigationList}}" wx:key="index" bindtap="handleJump" data-index="{{index}}">
-      <text class="iconfont {{item.iconName}}"></text>
-      <text>{{item.title}}</text>
-    </view>
+    <scroll-view enable-flex scroll-x class="nav_item" >
+      <view class="sroll_item"  wx:for="{{navigationList}}" wx:key="index" bindtap="handleJump" data-index="{{index}}">
+        <text class="iconfont {{item.iconName}}"></text>
+        <text>{{item.title}}</text>
+      </view>
+    </scroll-view>
   </view>
   <!-- 推荐歌曲区域 -->
   <view class="recommend_container">

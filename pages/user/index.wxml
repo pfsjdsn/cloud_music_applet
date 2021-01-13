@@ -21,7 +21,7 @@
       <!-- 会员图标 -->
         <text class="iconfont" wx:if="{{1 == 0}}">会员</text>
       </view>
-      <text class="e-m">Union</text>
+      <text class="e-m">开通黑胶vip</text>
       <text class="e-b">开通会员听歌, 撸代码</text>
     </view>
   </view>

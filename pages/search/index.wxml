@@ -1,13 +1,6 @@
 <view class="search_container">
   <!-- 头部搜索 -->
-  <view class="header">
-    <view class="search_input">
-      <text class="iconfont iconsousuo1"></text>
-      <input type="text" value="{{searchContent}}" placeholder="{{placeholderContent}}" placeholder-class="placeholder" bindinput="handleInputChange"/>
-      <text class="iconfont iconcha1" bindtap="clearSearchContent" hidden="{{!searchContent}}"></text>
-    </view>
-  <text class="cancel">取消</text>
-  </view>
+  <SearchHeader searchContent="{{searchContent}}" placeholderContent="{{placeholderContent}}" bindhandleInputChange="handleInputChange" bindclearSearchContent="clearSearchContent"></SearchHeader>
   <!-- 搜索内容展示 -->
   <block wx:if="{{searchList.length}}">
     <view class="show_search_content">

@@ -80,8 +80,7 @@ Page({
   }, 
   // 跳转到歌曲详情
   toSongDetail(e) {
-    console.log(e);
-    let {song, index} = e.currentTarget.dataset
+    let {song, index} = e.currentTarget.dataset    
     this.setData({index})
     wx.navigateTo({
       url: '../songDetail/index?musicId=' + song.id,

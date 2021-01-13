@@ -102,18 +102,38 @@
   content: "\e7c8";
 }
 .header {
-  margin: 0 0 20rpx 0;
-}
-.header .title {
-  font-size: 32rpx;
-  line-height: 80rpx;
-  color: #666;
-}
-.header > view .more {
   display: flex;
-  float: right;
-  border: 1rpx solid #666;
-  padding: 10rpx 15rpx;
-  font-size: 24rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 10rpx 0;
+}
+.header .search_input {
+  position: relative;
+  flex: 1;
+  background: rgba(237, 237, 237, 0.3);
   border-radius: 30rpx;
+}
+.header .search_input .iconsousuo1 {
+  position: absolute;
+  left: 15rpx;
+}
+.header .search_input input {
+  margin: 0 0 0 60rpx;
+  height: 60rpx;
+}
+.header .search_input .placeholder {
+  color: #d43c33;
+  font-size: 28rpxs;
+}
+.header .search_input .iconcha1 {
+  position: absolute;
+  right: 30rpx;
+  top: 0;
+  z-index: 10;
+  font-size: 30rpx;
+  color: #a8a095;
+}
+.header .cancel {
+  width: 100rpx;
+  text-align: center;
 }
