@@ -61,7 +61,16 @@ Page({
       // 取前3条
       let topListItem = {name: res.playlist.name, tracks: res.playlist.tracks.slice(0, 3)}
       topList.push(topListItem)
+      console.log(topList,  '+++++++++++=');
+      this.data.topList.forEach(item => {
+        console.log(item.tracks);
+        item.tracks.forEach(e => {
+          e['autor'] = e.ar[0].name
+          // e['musicId'] =  e.ar[0].id
+        });
+      });
       this.setData({topList})
+      console.log( this.data.topList);
     }
   },
   // 获取初始化数据
@@ -73,10 +82,14 @@ Page({
   },
   // 导航区域跳转
   handleJump(e) {
-    let {index} = e.currentTarget.dataset
+    let {index, title} = e.currentTarget.dataset
     if (index == 0) {
       wx.navigateTo({
         url: '/songPackage/pages/recommendSong/index',
+      })
+    } else  {      
+      wx.navigateTo({
+        url: '/pages/songSquare/index?title=' + title,
       })
     }
   },
@@ -94,4 +107,21 @@ Page({
         url: '/pages/search/index',
       })
     },
+    toMore(e){
+      let {title} = e.currentTarget.dataset
+      if (title === '推荐歌曲') {
+        wx.navigateTo({
+          url: '/pages/songSquare/index?title=' + '歌单广场',
+        })
+      } else {
+        wx.navigateTo({
+          url: '/pages/songSquare/index?title=' + '歌曲排行榜',
+        })
+      }
+    },
+    understandingMusic() {
+      wx.navigateTo({
+        url: '/pages/songSquare/index?title=' + '听歌识曲',
+      })
+    }
 })

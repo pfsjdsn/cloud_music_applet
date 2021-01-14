@@ -1,3 +1,19 @@
+page {
+  background-color: rgba(237, 237, 237, 0.3);
+}
+.index_container .search_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.index_container .search_container .search_input {
+  flex: 1;
+}
+.index_container .search_container .iconliebiao1,
+.index_container .search_container .iconchangge1 {
+  font-size: 50rpx;
+  color: #333;
+}
 .index_container .banners {
   position: relative;
   z-index: 1;
@@ -80,11 +96,12 @@
   padding: 20rpx;
 }
 .index_container .top_list .top_list_swiper {
-  height: 400rpx;
+  height: 450rpx;
 }
 .index_container .top_list .top_list_swiper .swiper_item {
-  width: 96%;
-  background-color: #fbfbfb;
+  width: 95%;
+  background-color: #fff;
+  padding: 10rpx;
 }
 .index_container .top_list .top_list_swiper .swiper_item .title {
   font-size: 30rpx;
@@ -92,12 +109,14 @@
 }
 .index_container .top_list .top_list_swiper .swiper_item .music_item {
   display: flex;
+  align-items: center;
   margin: 0 0 20rpx 0;
 }
 .index_container .top_list .top_list_swiper .swiper_item .music_item image {
   width: 100rpx;
   height: 100rpx;
   border-radius: 6rpx;
+  margin: 0 10rpx 0 0;
 }
 .index_container .top_list .top_list_swiper .swiper_item .music_item .count {
   width: 100rpx;
@@ -112,4 +131,8 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.index_container .top_list .top_list_swiper .swiper_item .music_item .nusic_author {
+  font-size: 23rpx;
+  color: #f4bd00;
 }

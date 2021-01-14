@@ -10,8 +10,9 @@
   </view>
   <view class="list_container">
     <view class="list_header">
+      <text class="iconfont iconbofang1"></text>
       <text>播放全部</text>
-      <text class="change_more">多选</text>
+      <text class="iconfont iconxuanze-duoxuan-tianchong change_more"></text>
     </view>
     <!-- 内容 -->
     <scroll-view scroll-y class="list_scroll">
@@ -19,7 +20,10 @@
         <image src="{{item.album.picUrl}}"></image>
         <view class="music_info">
           <text class="music_name">{{item.name}}</text>
-          <text class="music_author">{{item.artists[0].name}}</text>
+          <view class="music_details">
+            <text class="music_author">{{item.artists[0].name}}</text>
+            <text>-{{item.albumName}}</text>
+          </view>
         </view>
         <text class="iconfont iconziyuan"></text>
       </view>

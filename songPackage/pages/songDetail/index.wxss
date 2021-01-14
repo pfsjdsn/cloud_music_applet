@@ -10,6 +10,22 @@
                    2 百分比：用于复杂的动画， 动画不止两帧， ０％～100%， 可任意拆分
   */
 }
+.song_detail_container .author .btn {
+  width: 30rpx;
+  height: 50rpx;
+  position: fixed;
+  top: 10rpx;
+  right: 7rpx;
+  background-color: transparent;
+  z-index: 3;
+}
+.song_detail_container .author .iconshare_icon {
+  position: fixed;
+  top: 10rpx;
+  right: 20rpx;
+  font-size: 50rpx;
+  z-index: 1;
+}
 .song_detail_container .circle {
   z-index: 100;
   width: 70rpx;

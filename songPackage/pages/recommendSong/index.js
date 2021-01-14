@@ -77,6 +77,14 @@ Page({
     this.setData({
       recommendList: recommendList.recommend
     })
+    this.data.recommendList.forEach(item => {
+      item['albumName'] = item.album.name
+    });
+    this.setData({
+      recommendList: this.data.recommendList
+    })
+    console.log(this.data.recommendList);
+    
   }, 
   // 跳转到歌曲详情
   toSongDetail(e) {

@@ -1,6 +1,10 @@
 <view class="song_detail_container"  style="background: #155874;">
   <!-- style="background: url({{song.al.picUrl}})" -->
-  <view class="author">{{song.ar[0].name}}</view>
+  <view class="author">
+    <text>{{song.ar[0].name}}</text>
+    <button class="btn" open-type="share"></button>
+    <text class="iconfont iconshare_icon" bindtap="doShare"></text>
+  </view>
   <view class="circle"></view>
   <!-- 摇杆 -->
   <image class="needle {{isPlay ? 'needle_rotate' : ''}}" src="/static/images/song/needle.png"></image>

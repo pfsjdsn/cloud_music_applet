@@ -36,6 +36,8 @@ Page({
     this.setData({
       musicId: options.musicId
     })
+    console.log('options.musicId', options.musicId);
+    
     this.getMusicInfo(this.data.musicId)
 
     // 判断当前页面是否在播放
@@ -96,11 +98,7 @@ Page({
   handleMusicPlay() {
     let isPlay = !this.data.isPlay
     let {musicId, musicLink}  = this.data
-    this.musicConrol(isPflay, musicId, musicLink)
-    if (this.BackgroundAudioManager.src == null) {
-      console.log(111111111);
-      
-    }
+    this.musicConrol(isPlay, musicId, musicLink)
   },
   // 获取音乐详情
   async getMusicInfo(musicId) {

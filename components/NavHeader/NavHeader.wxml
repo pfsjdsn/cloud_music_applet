@@ -2,7 +2,7 @@
   <text class="title">{{title}}</text>
   <view>
     <text>{{nav}}</text>
-    <view class="more">
+    <view class="more" bindtap="toMore">
       <text>查看更多</text>
       <text class="iconfont iconyoujiantou"></text>
     </view>

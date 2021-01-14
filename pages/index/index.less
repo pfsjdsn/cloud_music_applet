@@ -1,4 +1,19 @@
+page {
+  background-color: rgba(237, 237, 237, 0.3);
+}
 .index_container {
+  .search_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .search_input {
+      flex: 1;
+    }
+    .iconliebiao1, .iconchangge1{
+      font-size: 50rpx;
+      color: #333;
+    }
+  }
   .banners {
     position: relative;
     z-index: 1;
@@ -86,21 +101,25 @@
   .top_list {
     padding: 20rpx;
     .top_list_swiper {
-      height: 400rpx;
+      height: 450rpx;
       .swiper_item {
-        width: 96%;
-        background-color: #fbfbfb;
+        width: 95%;
+        background-color: #fff;
+        // margin: 0 10rpx 0 0;
+        padding: 10rpx;
         .title {
           font-size: 30rpx;
           line-height: 80rpx;
         }
         .music_item {
           display: flex;
+          align-items: center;
           margin: 0 0 20rpx 0;
           image {
             width: 100rpx;
             height: 100rpx;
             border-radius: 6rpx;
+            margin: 0 10rpx 0 0;
           }
           .count {
             width: 100rpx;
@@ -115,6 +134,10 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+          }
+          .nusic_author {
+            font-size: 23rpx;
+            color: #f4bd00;
           }
         }
       }

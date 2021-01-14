@@ -1,8 +1,11 @@
 <div class="index_container">
-  <SearchHeader placeholderContent="{{placeholderContent}}" bindhandInputFocus="handInputFocus"></SearchHeader>
+  <view class="search_container">
+    <text class="iconfont iconliebiao1"></text>
+    <SearchHeader placeholderContent="{{placeholderContent}}" bindhandInputFocus="handInputFocus" class="search_input"></SearchHeader>
+    <text class="iconfont iconchangge1" bindtap="understandingMusic"></text>
+  </view>
   <!-- 轮播图 -->
-  <swiper class="banners" indicator-dots indicator-color="ivory" indicator-active-color="#d43c33"
-    interval="2000">
+  <swiper class="banners" indicator-dots indicator-color="ivory" indicator-active-color="#d43c33" interval="2000">
     <swiper-item wx:for="{{banners}}" wx:key="index" bindtap="toSongDetail" data-id="{{item.targetId}}">
       <image src="{{item.pic}}"></image>
       <text class="type_title {{item.typeTitle == '活动' ? 'color_type' : ''}}">{{item.typeTitle}}</text>
@@ -10,8 +13,8 @@
   </swiper>
   <!-- 5个图标导航区域 -->
   <view class="nav_container">
-    <scroll-view enable-flex scroll-x class="nav_item" >
-      <view class="sroll_item"  wx:for="{{navigationList}}" wx:key="index" bindtap="handleJump" data-index="{{index}}">
+    <scroll-view enable-flex scroll-x class="nav_item">
+      <view class="sroll_item" wx:for="{{navigationList}}" wx:key="index" bindtap="handleJump" data-index="{{index}}" data-title="{{item.title}}">
         <text class="iconfont {{item.iconName}}"></text>
         <text>{{item.title}}</text>
       </view>
@@ -20,7 +23,7 @@
   <!-- 推荐歌曲区域 -->
   <view class="recommend_container">
     <!-- 头部 -->
-    <NavHeader title="推荐歌曲" nav="为你精心推荐"></NavHeader>
+    <NavHeader title="推荐歌曲" nav="为你精心推荐" bindtoMore="toMore" data-title="推荐歌曲"></NavHeader>
     <!-- 内容区 -->
     <scroll-view class="recommend_scroll" enable-flex scroll-x>
       <view class="sroll_item" wx:for="{{recommendList}}" wx:key="id">
@@ -32,17 +35,18 @@
   <!-- 排行榜区域 -->
   <view class="top_list">
     <!-- 头部 -->
-    <NavHeader title="排行榜" nav="热歌风向标"></NavHeader>
+    <NavHeader title="排行榜" nav="热歌风向标" bindtoMore="toMore" data-title="排行榜"></NavHeader>
     <!-- 内容 -->
     <!-- previous-margin: 前边距 next-margin: 后边距 -->
     <swiper class="top_list_swiper" circular previous-margin="50rpx" next-margin="50rpx">
       <swiper-item wx:for="{{topList}}" wx:key="name">
         <view class="swiper_item">
           <view class="title">{{item.name}}</view>
-          <view class="music_item"  wx:for="{{item.tracks}}" wx:key="id" wx:for-item="music_item">
+          <view class="music_item" wx:for="{{item.tracks}}" wx:key="id" wx:for-item="music_item" bindtap="toSongDetail" data-id="{{music_item.id}}">
             <image src="{{music_item.al.picUrl}}"></image>
-            <text class="count">{{index + 1}}</text>
+            <!-- <text class="count">{{index + 1}}</text> -->
             <text class="nusic_name">{{music_item.name}}</text>
+            <text class="nusic_author">-{{music_item.autor}}</text>
           </view>
         </view>
       </swiper-item>
