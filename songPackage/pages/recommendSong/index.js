@@ -82,9 +82,7 @@ Page({
     });
     this.setData({
       recommendList: this.data.recommendList
-    })
-    console.log(this.data.recommendList);
-    
+    })    
   }, 
   // 跳转到歌曲详情
   toSongDetail(e) {

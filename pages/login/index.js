@@ -46,7 +46,6 @@ Page({
       return
     }
     let res = await request('/login/cellphone',{phone, password, isLogin: true})
-    console.log(res);
     if(res.code == 200) {
       wx.setStorageSync('userInfo', JSON.stringify(res.profile))
       wx.showToast({

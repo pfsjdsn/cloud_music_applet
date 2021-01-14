@@ -100,8 +100,6 @@ Page({
     let {
       videoUpdateTime
     } = this.data
-    console.log(e);
-
     /**
      * 判断记录播放时长的videoUpdateTime数组中是否有当前视频的播放记录
      * 如果有， 在原有的播放记录中修改时间为当前的播放时间
@@ -138,7 +136,6 @@ Page({
   },
   // 上拉触底 (scroll-view ) 
   handleToLower() {
-    console.log(this.data.videoList);
     let newVideoList =  [{
       "type": 1,
       "displayed": false,

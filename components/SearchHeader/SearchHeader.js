@@ -33,6 +33,9 @@ Component({
     },
     handInputFocus() {
       this.triggerEvent('handInputFocus')
+    },
+    getSearchList() {
+      this.triggerEvent('getSearchList')
     }
   }
 })

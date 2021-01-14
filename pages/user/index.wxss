@@ -135,11 +135,22 @@
 }
 .user_container .cover_container .personl_content .recent_play_container .recent_scroll .recent_item {
   margin: 0 36rpx 0 0;
+  display: flex;
+  flex-direction: column;
 }
 .user_container .cover_container .personl_content .recent_play_container .recent_scroll .recent_item image {
   width: 150rpx;
   height: 150rpx;
   border-radius: 10rpx;
+  margin: 0 0 10rpx 0;
+}
+.user_container .cover_container .personl_content .recent_play_container .recent_scroll .recent_item .song_name {
+  width: 150rpx;
+  height: 24rpx;
+  font-size: 24rpx;
+  line-height: 24rpx;
+  color: #666;
+  text-align: center;
 }
 .user_container .cover_container .personl_content .card_list {
   margin: 20rpx 0 0 0;

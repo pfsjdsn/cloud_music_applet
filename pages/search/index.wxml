@@ -1,12 +1,13 @@
 <view class="search_container">
   <!-- 头部搜索 -->
-  <SearchHeader searchContent="{{searchContent}}" placeholderContent="{{placeholderContent}}" bindhandleInputChange="handleInputChange" bindclearSearchContent="clearSearchContent"></SearchHeader>
+  <SearchHeader searchContent="{{searchContent}}" placeholderContent="{{placeholderContent}}" bindhandleInputChange="handleInputChange" bindclearSearchContent="clearSearchContent" bindgetSearchList="getSearchList"></SearchHeader>
   <!-- 搜索内容展示 -->
   <block wx:if="{{searchList.length}}">
     <view class="show_search_content">
     <view class="search_content">搜索内容：{{searchContent}}</view>
     <view class="search_list">
-      <view class="search_item" wx:for="{{searchList}}" wx:key="id">
+      <view class="search_item" wx:for="{{searchList}}" wx:key="id"
+      data-id="{{item.id}}" bindtap="toSongDetail">
         <text class="iconfont iconsousuo1"></text>
         <text class="content">{{item.name}}</text>
       </view>
@@ -17,7 +18,8 @@
     <!-- 搜索历史记录 -->
     <view class="history" wx:if="{{historyList.length}}">
       <view class="title">历史</view>
-      <view class="history_item" wx:for="{{historyList}}" wx:key="index">
+      <view class="history_item" wx:for="{{historyList}}" wx:key="index"
+      bindtap="getSearchList" data-search-Content="{{item}}">
         {{item}}
       </view>
       <text class="iconfont iconshanchu" bindtap="delSearchHistory"></text>
@@ -27,7 +29,8 @@
       <view class="title">热搜榜</view>
       <!-- 热搜列表 -->
       <view class="hot_list">
-        <view class="hot_item" wx:for="{{hostList}}" wx:key="searchWord">
+        <view class="hot_item" wx:for="{{hostList}}" wx:key="searchWord"
+        bindtap="getSearchList" data-search-Content="{{item.searchWord}}">
           <view class="order">{{index + 1}}</view>
           <view class="order">{{item.searchWord}}</view>
           <image wx:if="{{item.iconUrl}}" src="{{item.iconUrl}}" class="icon_image" ></image>

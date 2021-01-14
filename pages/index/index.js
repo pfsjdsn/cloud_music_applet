@@ -50,8 +50,7 @@ Page({
     this.getInitData()
     // 获取推荐歌单数据
     let res = await request('/personalized', {limit: 10})
-    this.setData({recommendList: res.result})
-
+    this.setData({recommendList: res.result})   
     // 获取排行榜数据
     let idx = 0
     let {topList} = this.data
@@ -61,16 +60,12 @@ Page({
       // 取前3条
       let topListItem = {name: res.playlist.name, tracks: res.playlist.tracks.slice(0, 3)}
       topList.push(topListItem)
-      console.log(topList,  '+++++++++++=');
       this.data.topList.forEach(item => {
-        console.log(item.tracks);
         item.tracks.forEach(e => {
           e['autor'] = e.ar[0].name
-          // e['musicId'] =  e.ar[0].id
         });
       });
       this.setData({topList})
-      console.log( this.data.topList);
     }
   },
   // 获取初始化数据
@@ -96,8 +91,6 @@ Page({
     // 轮播图跳转到歌曲详情
     toSongDetail(e) {
       let {id} = e.currentTarget.dataset
-      console.log(id);
-      
       wx.navigateTo({
         url: '../../songPackage/pages/songDetail/index?musicId=' + id,
       })
@@ -123,5 +116,11 @@ Page({
       wx.navigateTo({
         url: '/pages/songSquare/index?title=' + '听歌识曲',
       })
-    }
+    },
+    toSongListDetails(e) {
+      let {id} = e.currentTarget.dataset
+      wx.navigateTo({
+        url: '/pages/songListDetails/index?id=' + id,
+      })
+    },
 })

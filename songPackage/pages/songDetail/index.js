@@ -35,9 +35,7 @@ Page({
   onLoad: function (options) {
     this.setData({
       musicId: options.musicId
-    })
-    console.log('options.musicId', options.musicId);
-    
+    })    
     this.getMusicInfo(this.data.musicId)
 
     // 判断当前页面是否在播放
@@ -116,7 +114,6 @@ Page({
       return;
     }
     let durationTime = moment(res.songs[0].dt).format('mm:ss')
-    console.log(durationTime);
     this.setData({
       song: res.songs[0],
       durationTime
@@ -148,7 +145,6 @@ Page({
     this.backgroundAudioManager.stop()
     // 订阅来自recommendSong页面发布的musicId的消息(onload页面中，只会执行一次 )
     PubSub.subscribe('musicId', (msg, musicId) => {
-      console.log(musicId);
       // 获取音乐信息
       this.getMusicInfo(musicId)
       // 自动播放

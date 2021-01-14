@@ -5,7 +5,8 @@
     "pages/video/index",
     "pages/login/index",
     "pages/search/index",
-    "pages/songSquare/index"
+    "pages/songSquare/index",
+    "pages/theMore/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

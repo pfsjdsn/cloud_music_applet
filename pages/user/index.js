@@ -48,15 +48,21 @@ Page({
     this.getrecentPlayList(userInfo.userId)
   },
   async getrecentPlayList(uid) {
-    let recentPlayListData = await request('/user/record', {uid, type: 0})
+    console.log(uid);
+    
+    let recentPlayListData = await request('/user/record', {uid, type: 1})
     let index = 0
-    let recentPlayList = recentPlayListData.allData.splice(0,10).map(item => { // 截取前10条记录,再增加一个id字段
+    console.log(recentPlayListData.weekData);
+    
+    let recentPlayList = recentPlayListData.weekData.slice(0,9).map(item => { // 截取前10条记录,再增加一个id字段
       item.id = index++
       return item
     })
     this.setData({
       recentPlayList
     })
+    console.log(this.data.recentPlayList);
+    
   },
   // 点击
   handleTouchStart(e) {
@@ -91,5 +97,24 @@ Page({
       url: '/pages/login/index',
     })
     
-  }
+  },
+  toPersonal(e) {
+    let {title} = e.currentTarget.dataset
+    wx.navigateTo({
+      url: '/pages/songSquare/index?title=' + title
+    })
+  },
+  openMembership() {
+    wx.navigateTo({
+      url: '/pages/songSquare/index?title=' + '会员中心'
+    })
+  },
+  toSongDetail(e) {
+    let {id} = e.currentTarget.dataset
+    console.log(id);
+    
+    wx.navigateTo({
+      url: '../../songPackage/pages/songDetail/index?musicId=' + id,
+    })
+  },
 })

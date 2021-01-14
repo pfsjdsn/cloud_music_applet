@@ -28,6 +28,8 @@ Page({
       placeholderContent: placeholderData.data.showKeyword,
       hostList: hostListData.data
     })
+    console.log(this.data.hostList);
+    
   },
   getHistoryList() {
     let historyList = wx.getStorageSync('historyList')
@@ -49,7 +51,18 @@ Page({
     isSend = false
     }, 3000);
   },
-  async getSearchList() {
+  async getSearchList(e) {
+    console.log(e);
+    if (e) {
+      let {searchContent} = e.currentTarget.dataset
+      this.setData({searchContent})
+    }
+    let {placeholderContent}  = this.data
+    if (placeholderContent && !this.data.searchContent) {
+      this.setData({
+        searchContent: placeholderContent
+      })
+    }
     if(!this.data.searchContent) {
       // 如果输入内容为空，直接return 
       this.setData({
@@ -62,6 +75,8 @@ Page({
       this.setData({
         searchList: searchListData.result.songs
     })
+    console.log(this.data.searchList);
+    
     // 记录去重
     if(historyList.indexOf(searchContent) !== -1) {
       historyList.splice(historyList.indexOf(searchContent), 1)
@@ -85,6 +100,16 @@ Page({
           wx.removeStorageSync('historyList')
         }
       } 
+    })
+  },
+  toSongDetail(e) {
+    let {id} = e.currentTarget.dataset
+    wx.navigateTo({
+      url: '../../songPackage/pages/songDetail/index?musicId=' + id,
+    })
+    this.setData({
+      searchContent: '',
+      searchList: []
     })
   },
 })
