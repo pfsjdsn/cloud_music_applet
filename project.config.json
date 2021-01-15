@@ -111,6 +111,12 @@
         {
           "name": "songListDetails",
           "pathName": "pages/songListDetails/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "demo",
+          "pathName": "pages/demo/index",
           "scene": null
         }
       ]

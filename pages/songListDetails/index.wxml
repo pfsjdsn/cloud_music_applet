@@ -1,27 +1,26 @@
 <view class="songListDetails_container">
   <view class="title_container">
     <view class="header">
-      <text class="iconfont iconsousuo"></text>
+      <text class="iconfont iconsousuo" bindtap="toSearch"></text>
       <text class="iconfont iconziyuan"></text>
     </view>
     <view class="user_info">
       <view class="user_img">
-        <image src="../../static/images/personal/user-bg.jpg"></image>
+        <image src="{{coverObj.coverImgUrl}}"></image>
         <view class="song_hits">
           <text class="iconfont iconbofang2"></text>
-          <text>147万</text>
+          <text>{{coverObj.playCount}}</text>
         </view>
       </view>
       <view class="song_describe">
-        <view>是不是把所有委屈咽下，才显得懂事</view>
+        <view>{{coverObj.name}}</view>
         <view class="autor_info">
-          <image src="../../static/images/personal/bgImg2.jpg"></image>
-          <text>情思天鹅</text>
+          <image src="{{coverObj.avatarUrl}}"></image>
+          <text>{{coverObj.nickname}}</text>
           <text class="iconfont iconjia"></text>
         </view>
-        <view class="song_mark">
-          <text>你是不是也会经常这样，独自...</text>
-          
+        <view class="song_mark" bindtap="toMore">
+          <text>{{coverObj.description}}</text>
           <text class="iconfont iconyoujiantou"></text>
         </view>
       </view>
@@ -34,7 +33,7 @@
     </view>
   </view>
   <view class="content_container">
-    <view class="vip_container">
+    <view class="vip_container" bindtap="openMembership">
       <view class="vip_left">
         <text class="iconfont iconhuaban24"></text>
         <text>含{{3}}首VIP专享歌曲</text>
@@ -47,15 +46,19 @@
     <view class="song_header">
       <text class="iconfont iconbofang1"></text>
       <text style="font-weight: 600;">播放全部</text>
-      <text style="font-size: 24rpx;color: #666;">（{{50}}）</text>
+      <text style="font-size: 24rpx;color: #666;">（{{coverObj.trackCount}}）</text>
       <text class="iconfont iconxuanze-duoxuan-tianchong all_check"></text>
     </view>
-    <view class="song_list">
-      <view class="song_content">
-        <text style="color: #666;margin: 10rpx 0 0 0;">1</text>
+    <view class="song_list" wx:for="{{songList}}" wx:key="index" bindtap="toSongDetail" data-id="{{item.id}}">
+      <view class="song_content" > 
         <view class="song_name">
-          <text style="font-size: 30rpx;margin: 0 0 5rpx 0;">红黑</text>
-          <text style="font-size:20rpx;color: #666;">蔡文静-红黑</text>
+          <view class="song_number">
+            <text style="color: #666;margin: 10rpx 0 0 0;">{{index + 1}}</text>
+          </view>
+          <view class="song_detail_name">
+            <text style="font-size: 30rpx;margin: 0 0 5rpx 0;">{{item.name}}</text>
+          <text style="font-size:20rpx;color: #666;">{{item.ar[0].name}}-{{item.al.name}}</text>
+          </view>
         </view>
       </view>
       <text class="iconfont iconziyuan"></text>

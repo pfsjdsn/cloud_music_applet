@@ -1,0 +1,1 @@
+<view bindtap="chooseLocation">跳转地图</view>

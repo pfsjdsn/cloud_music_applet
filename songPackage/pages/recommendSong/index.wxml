@@ -6,6 +6,7 @@
       <text class="year">{{year}} /</text>
       <text class="month">{{month}} /</text>
       <text class="day">{{day}}</text>
+      <view style="font-size: 25rpx;line-height:2em;">你来，我一直都在🐶</view>
     </view>
   </view>
   <view class="list_container">

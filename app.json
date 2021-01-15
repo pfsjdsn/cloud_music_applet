@@ -7,7 +7,8 @@
     "pages/search/index",
     "pages/songSquare/index",
     "pages/theMore/index",
-    "pages/songListDetails/index"
+    "pages/songListDetails/index",
+    "pages/demo/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

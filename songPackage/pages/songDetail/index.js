@@ -129,7 +129,21 @@ Page({
       if (!musicLink) { // 避免重复发获取音乐链接的请求
         // 获取音乐链接
         let musicLinkData = await request('/song/url', {id: musicId})
+        if (!musicLinkData.data[0].url) {
+          wx.showToast({
+            title: '暂无歌曲信息！',
+            icon: 'none'
+          })
+          setTimeout(() => {
+            wx.navigateBack({
+              delta: 1,
+            })
+          }, 1000);
+          return;
+        }
         musicLink = musicLinkData.data[0].url 
+        console.log(musicLinkData);
+        
         this.setData({musicLink})
       }
       this.backgroundAudioManager.src = musicLink

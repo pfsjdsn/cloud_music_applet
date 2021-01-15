@@ -6,16 +6,17 @@
     display: flex;
     flex-direction: column;
     padding: 20rpx;
+    position: relative;
     .header {
+      position: absolute;
+      top: 20rpx;
+      right: 41rpx;
       width: 20%;
       display: flex;
       justify-content: space-between;
       font-size: 47rpx;
       font-weight: 600;
       color: #fff;
-      position: fixed;
-      top: 20rpx;
-      right: 5rpx;
     }
     .user_info {
       color: #fff;
@@ -86,25 +87,41 @@
         .song_mark {
           color: #cfc5c4;
           font-size: 26rpx;
-          margin: 0 -20rpx 0 0;
+          // margin: 0 -20rpx 0 0;
           font-weight: 600;
+          display: flex;
+          text:nth-child(1) {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical; // 设置模式：纵向队形
+            -webkit-line-clamp: 1; // 多行的行数
+          }
         }
       }
     }
   }
   .number_container {
+    margin: 0 0 40rpx 0;
+    position: absolute;
+    left: 10%;
+    top: 41%;
     border: 1rpx solid #d3d3d3;
     display: flex;
-    position: fixed;
-    top: 39.5%;
-    left: 7.5%;
+    justify-content: space-between;
+    width: 70%;
     background-color: #fff;
     border-radius: 80rpx;
     padding: 20rpx 35rpx;
     .number_item {
       padding: 0 30rpx;
+      font-size: 25rpx;
+      white-space: nowrap;
       display: flex;
       position: relative;
+      text:nth-child(1) {
+        margin: 0 8rpx 0 0;
+      }
     }
     .number_item:nth-child(1)::after {
       display: none;
@@ -126,7 +143,7 @@
       border: 1rpx solid #d3d3d3;
       padding: 20rpx 20rpx;
       border-radius: 20rpx;
-      margin: 70rpx 0 30rpx 0;
+      margin: 40rpx 0 30rpx 0;
       display: flex;
       justify-content: space-between;
       .iconhuaban24 {
@@ -160,12 +177,20 @@
     .song_list {
       display: flex;
       justify-content: space-between;
+      margin: 0 0 30rpx 0;
       .song_content {
         display: flex;
         .song_name {
           display: flex;
-          flex-direction: column;
           margin: 0 0 0 20rpx;
+          .song_number {
+            margin: 0 12rpx 0 -10rpx;
+            line-height: 2em;
+          }
+          .song_detail_name {
+            display: flex;
+            flex-direction: column;
+          }
         }
       }
       .iconziyuan {
