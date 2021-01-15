@@ -105,6 +105,12 @@
         {
           "name": "other",
           "pathName": "pages/other/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "songListDetails",
+          "pathName": "pages/songListDetails/index",
           "scene": null
         }
       ]

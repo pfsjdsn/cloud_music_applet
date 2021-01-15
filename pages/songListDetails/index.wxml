@@ -1,0 +1,62 @@
+<view class="songListDetails_container">
+  <view class="title_container">
+    <view class="header">
+      <text class="iconfont iconsousuo"></text>
+      <text class="iconfont iconziyuan"></text>
+    </view>
+    <view class="user_info">
+      <view class="user_img">
+        <image src="../../static/images/personal/user-bg.jpg"></image>
+        <view>
+          <text class="iconfont iconbofang2"></text>
+          <text>147万</text>
+        </view>
+
+      </view>
+      <view class="song_describe">
+        <view>是不是把所有委屈咽下，才显得懂事</view>
+        <view>
+          <image></image>
+          <text>情思天鹅</text>
+          <text class="iconfont iconjia"></text>
+        </view>
+        <view>
+          <text>你是不是也会经常这样，独自...</text>
+          
+          <text class="iconfont iconyoujiantou"></text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="number_container">
+    <view wx:for="{{operationList}}" wx:key="index">
+      <text class="iconfont {{item.iconName}}"></text>
+      <text>{{item.number}}</text>
+    </view>
+  </view>
+  <view class="content_container">
+    <view class="vip_container">
+      <view>
+        <text class="iconfont iconhuaban24"></text>
+        <text>含{{3}}首vip专享歌曲</text>
+      </view>
+      <view>
+        <text>首开vip仅{{5}}元</text>
+        <text class="iconfont iconyoujiantou"></text>
+      </view>
+    </view>
+    <view class="song_header">
+      <text class="iconfont iconbofang1"></text>
+      <text>播放全部（{{50}}）</text>
+      <text class="iconfont iconxuanze-duoxuan-tianchong"></text>
+    </view>
+    <view class="song_list">
+      <text>1</text>
+      <view>
+        <view>红黑</view>
+        <text>蔡文静-红黑</text>
+      </view>
+      <text class="iconfont iconziyuan"></text>
+    </view>
+  </view>
+</view>
