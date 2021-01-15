@@ -14,23 +14,25 @@
   font-weight: 600;
   color: #fff;
   position: fixed;
-  top: 0;
-  right: 0;
+  top: 20rpx;
+  right: 5rpx;
 }
 .songListDetails_container .title_container .user_info {
-  border: 1rpx solid red;
-  margin: 90rpx 0 0 0;
+  color: #fff;
+  display: flex;
+  margin: 120rpx 0 0 0;
   width: 100%;
   height: 40vh;
-  display: flex;
 }
 .songListDetails_container .title_container .user_info .user_img {
-  position: relative;
-  flex: 2;
-  width: 250rpx;
-  height: 250rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 40rpx;
   background-color: #7d6b6b;
+  position: relative;
+  width: 230rpx;
+  height: 250rpx;
 }
 .songListDetails_container .title_container .user_info .user_img image {
   position: absolute;
@@ -39,6 +41,130 @@
   height: 250rpx;
   border-radius: 40rpx;
 }
+.songListDetails_container .title_container .user_info .user_img .song_hits {
+  position: absolute;
+  right: 9rpx;
+  top: 23rpx;
+  font-size: 24rpx;
+  border-radius: 20rpx;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 6rpx;
+  line-height: 24rpx;
+}
 .songListDetails_container .title_container .user_info .song_describe {
-  flex: 3;
+  display: flex;
+  line-height: 1.5em;
+  margin: 0 0 0 60rpx;
+  flex: 2;
+  padding: 0 90rpx 0 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.songListDetails_container .title_container .user_info .song_describe .autor_info {
+  color: #cfc5c4;
+  margin: 20rpx 0 20rpx 0;
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+}
+.songListDetails_container .title_container .user_info .song_describe .autor_info image {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  margin: 0 15rpx 0 0;
+}
+.songListDetails_container .title_container .user_info .song_describe .autor_info .iconjia {
+  margin: 0 0 0 10rpx;
+  border-radius: 20rpx;
+  background-color: #8d8281;
+  padding: 0 26rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+.songListDetails_container .title_container .user_info .song_describe .song_mark {
+  color: #cfc5c4;
+  font-size: 26rpx;
+  margin: 0 -20rpx 0 0;
+  font-weight: 600;
+}
+.songListDetails_container .number_container {
+  border: 1rpx solid #d3d3d3;
+  display: flex;
+  position: fixed;
+  top: 39.5%;
+  left: 7.5%;
+  background-color: #fff;
+  border-radius: 80rpx;
+  padding: 20rpx 35rpx;
+}
+.songListDetails_container .number_container .number_item {
+  padding: 0 30rpx;
+  display: flex;
+  position: relative;
+}
+.songListDetails_container .number_container .number_item:nth-child(1)::after {
+  display: none;
+}
+.songListDetails_container .number_container .number_item::after {
+  position: absolute;
+  left: 5rpx;
+  content: '';
+  font-weight: 600;
+  width: 4rpx;
+  height: 45rpx;
+  background-color: #eee;
+}
+.songListDetails_container .content_container {
+  padding: 30rpx;
+}
+.songListDetails_container .content_container .vip_container {
+  border: 1rpx solid #d3d3d3;
+  padding: 20rpx 20rpx;
+  border-radius: 20rpx;
+  margin: 70rpx 0 30rpx 0;
+  display: flex;
+  justify-content: space-between;
+}
+.songListDetails_container .content_container .vip_container .iconhuaban24 {
+  color: #f01313;
+  font-size: 30rpx;
+  margin: 0 10rpx 0 0;
+}
+.songListDetails_container .content_container .vip_container .vip_left {
+  font-size: 27rpx;
+  font-weight: 600;
+  color: #6a6a6a;
+}
+.songListDetails_container .content_container .vip_container .vip_right {
+  font-size: 24rpx;
+  color: #9e9e9e;
+}
+.songListDetails_container .content_container .song_header {
+  line-height: 2em;
+}
+.songListDetails_container .content_container .song_header .iconbofang1 {
+  color: #f01313;
+  font-size: 50rpx;
+  margin: 0 10rpx 0 0;
+}
+.songListDetails_container .content_container .song_header .all_check {
+  float: right;
+}
+.songListDetails_container .content_container .song_list {
+  display: flex;
+  justify-content: space-between;
+}
+.songListDetails_container .content_container .song_list .song_content {
+  display: flex;
+}
+.songListDetails_container .content_container .song_list .song_content .song_name {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 0 20rpx;
+}
+.songListDetails_container .content_container .song_list .iconziyuan {
+  color: #9e9e9e;
 }
