@@ -17,6 +17,5 @@ Page({
   },
   async getSongListDetails(id) {
     let res1 = await request('/playlist/detail', {id: id})
-    console.log(res1)
   }
 })

@@ -30,13 +30,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options);
     this.getSongListDetails(options.id)
 
   },
   async getSongListDetails(id) {
     let res = await request('/playlist/detail', {id: id})
-    console.log(res);
     let {coverObj, operationList, songList} = this.data
     coverObj.coverImgUrl = res.playlist.coverImgUrl
     coverObj.description = res.playlist.description
@@ -46,7 +44,6 @@ Page({
     coverObj.avatarUrl = res.playlist.creator.avatarUrl
     coverObj.tags = res.playlist.tags
     songList = res.playlist.tracks
-    console.log(res.playlist.playCount);
     if (res.playlist.playCount > 100000000) {
       res.playlist.playCount = (res.playlist.playCount / 100000000).toFixed(1) + '亿'
     }
@@ -80,7 +77,6 @@ Page({
       songList
     })
     operationList.forEach((item, index) => {
-      console.log(item);
       if (index == 0) {
         item['number'] = coverObj.subscribedCount
       } else if (index == 1) {
@@ -92,7 +88,6 @@ Page({
     this.setData({
       operationList
     })
-    console.log(this.data.songList);
   },
   toSongDetail(e) {
     let {id} = e.currentTarget.dataset

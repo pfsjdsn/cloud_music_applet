@@ -142,8 +142,6 @@ Page({
           return;
         }
         musicLink = musicLinkData.data[0].url 
-        console.log(musicLinkData);
-        
         this.setData({musicLink})
       }
       this.backgroundAudioManager.src = musicLink

@@ -1,3 +1,14 @@
+
+/**
+ * 接口: 轮播图数据接口 /banner, 推荐歌单接口 /personalized, 排行榜数据接口
+ * /top/list， 搜索初始提示接口 /search/default
+ * 微信小程序官方api: 无
+ * 微信小程序官方事件: wx.navigateTo  路由跳转
+ * js: array.slice() 数组截取 array.forEach() 数据循环
+ * async await 异步请求
+ * promise封装请求
+ */
+
 import request from '../../utils/request'
 Page({
 

@@ -48,11 +48,9 @@ Page({
     this.getrecentPlayList(userInfo.userId)
   },
   async getrecentPlayList(uid) {
-    console.log(uid);
     
     let recentPlayListData = await request('/user/record', {uid, type: 1})
     let index = 0
-    console.log(recentPlayListData.weekData);
     
     let recentPlayList = recentPlayListData.weekData.slice(0,9).map(item => { // 截取前10条记录,再增加一个id字段
       item.id = index++
@@ -111,7 +109,6 @@ Page({
   },
   toSongDetail(e) {
     let {id} = e.currentTarget.dataset
-    console.log(id);
     
     wx.navigateTo({
       url: '../../songPackage/pages/songDetail/index?musicId=' + id,

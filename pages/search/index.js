@@ -1,3 +1,14 @@
+/**
+ * 接口: 搜索初始提示接口 /search/default, 热搜列表接口 /search/hot/detail
+ * 搜索接口 /search
+ * 微信小程序官方api: 无
+ * 微信小程序官方事件: wx.navigateTo  路由跳转, wx.showModal 显示模态对话框,wx.removeStorageSync('key') 清除缓存 
+ * js: array.indexOf() 返回指定字符在字符串中第一次出现处的索引,
+ * array.unshift() 数组开头添加元素
+ * async await 异步请求
+ * promise封装请求
+ * 函数节流
+ */
 import request from '../../utils/request'
 
 let isSend = false // 节流函数
@@ -28,7 +39,6 @@ Page({
       placeholderContent: placeholderData.data.showKeyword,
       hostList: hostListData.data
     })
-    console.log(this.data.hostList);
     
   },
   getHistoryList() {
@@ -52,7 +62,6 @@ Page({
     }, 3000);
   },
   async getSearchList(e) {
-    console.log(e);
     if (e) {
       let {searchContent} = e.currentTarget.dataset
       this.setData({searchContent})
@@ -75,7 +84,6 @@ Page({
       this.setData({
         searchList: searchListData.result.songs
     })
-    console.log(this.data.searchList);
     
     // 记录去重
     if(historyList.indexOf(searchContent) !== -1) {

@@ -1,1 +1,5 @@
-<view bindtap="chooseLocation">跳转地图</view>
+<scroll-view class="recommend_scroll" enable-flex scroll-x>
+      <view class="sroll_item" wx:for="{{5}}">
+        <image src="../../static/images/recommendSong/recommendSong.jpg"></image>
+      </view>
+</scroll-view>

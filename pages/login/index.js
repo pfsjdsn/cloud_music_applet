@@ -1,3 +1,11 @@
+/**
+ * 接口: 登录接口 /login/cellphone, 
+ * 微信小程序官方api: 无
+ * 微信小程序官方事件: wx.navigateBack 返回多级页面,  wx.showToast 显示消息提示框, wx.setStorageSync（存入缓存）
+ * async await 异步请求
+ * promise封装请求
+ */
+
 import request from '../../utils/request'
 Page({
 
