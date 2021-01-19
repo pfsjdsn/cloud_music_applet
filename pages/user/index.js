@@ -1,10 +1,15 @@
-/**
- * 
+
+
+/* 接口: 最近播放记录接口 /user/record
+* 微信小程序官方api: 无
+* 微信小程序官方事件: wx.navigateTo  路由跳转
+* async await 异步请求
  * 手指移动
  * transform:变形。改变
  * translate:移动，transform的一个方法
  * transition: 平滑的过渡
- */
+* promise封装请求
+*/
 let startY = 0; //手指起始坐标
 let moveY = 0 //手指移动坐标
 let moveDistance = 0 // //手指移动的距离

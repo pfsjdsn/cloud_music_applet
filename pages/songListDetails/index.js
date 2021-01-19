@@ -4,6 +4,15 @@
  * 
  */
 
+ /**
+ * 接口: 歌曲详情接口 /playlist/detail
+ * 微信小程序官方api: 无
+ * 微信小程序官方事件: wx.navigateTo  路由跳转
+ * js: Math.round 四舍五入函数， toFixed(1) 四舍五入为指定小数位数的数字
+ * async await 异步请求
+ * promise封装请求
+ */
+
 import request from '../../utils/request'
 Page({
 
@@ -40,7 +49,7 @@ Page({
     coverObj.description = res.playlist.description
     coverObj.name = res.playlist.name
     coverObj.trackCount = res.playlist.trackCount
-    coverObj.nickname = res.playlist.creator.nickname
+    coverObj.nickname =- res.playlist.creator.nickname
     coverObj.avatarUrl = res.playlist.creator.avatarUrl
     coverObj.tags = res.playlist.tags
     songList = res.playlist.tracks

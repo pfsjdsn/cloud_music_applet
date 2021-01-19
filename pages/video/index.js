@@ -1,7 +1,13 @@
 /**
- * 网易云api无分页功能
- * 
+ * 接口: 获取视频导航列表接口 /video/group/list， 获取视频列表 /video/group
+ * /top/list， 搜索初始提示接口 /search/default
+ * 微信小程序官方api: 无
+ * 微信小程序官方事件: wx.navigateTo  路由跳转， wx.showLoading() 显示 loading 提示框
+ * onShareAppMessage() 分享
+ * async await 异步请求
+ * promise封装请求
  */
+
 import request from '../../utils/request'
 
 Page({
