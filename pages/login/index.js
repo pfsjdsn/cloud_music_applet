@@ -13,8 +13,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    phone: '18870757638',
-    password: 'lyx123456'
+    phone: '',
+    password: ''
   },
 
   /**
